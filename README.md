@@ -2,21 +2,24 @@
 
 Descripción
 
-Se propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento.
+Se propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento. El proyecto de desarrollo WEB de sistema de gestión integrado de ventas, donde se trabajarán 5 módulos interconectados pero independientes...
 
-Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
 
 Integrantes
-1
-2
-3
-4
-5 Milton Cesar Vargas Quiroz
+1. María Osorio 
+2.
+3. Andrés Delgado
+4. Milton Cesar Vargas Quiroz
+5. José Ignacio Valencia Díaz
 
-Presentación María
+Presentaciones
+1.  María Osorio
 Hola mi nombre es María Isabel, actual estudiante de Misión Tics..
+2.
+3.
+4. Milton Cesar Vargas Quiroz
+5. José Ignacio Valencia Díaz
+Soy ingeniero civil paisa, graduado de la Escuela de Ingeniería de Antioquia.
+He desarrollado mi carrera dentro de la ingeniería en ambientes administrativos y financieros, cercanos al Controlling de empresas y obras de construcción Industrial
+Deseo ampliar mi carrera con el dominio de la ciencia de datos y ultimamente con la programación de software otorgada por el Mintic.
 
-- hOLA SOy ANdrés
-
-Buenos dias mi nombre es Milton Cesar Vargas Quiroz, tengo 42 años vivo en un municipio de antioquia llamado Guarne.
-soy una persona autodidacto que le gusta aprender constantemente sobretodo si esos conocimientos son aplicados constantemente

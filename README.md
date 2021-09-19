@@ -25,3 +25,4 @@ Presentaciones
     Soy ingeniero civil paisa, graduado de la Escuela de Ingeniería de Antioquia.
     He desarrollado mi carrera dentro de la ingeniería en ambientes administrativos y financieros, cercanos al Controlling de empresas y obras de construcción Industrial
     Deseo ampliar mi carrera con el dominio de la ciencia de datos y ultimamente con la programación de software otorgada por el Mintic.
+

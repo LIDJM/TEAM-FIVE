@@ -1,12 +1,12 @@
 # TEAM-FIVE
 
-* Descripción
 -------------
+#### Descripción:
 
 Se propone analizar, diseñar y construir una aplicación software que permita controlar las ventas físicas y virtuales de una empresa de manufactura y hacerles el correspondiente seguimiento. El proyecto de desarrollo WEB de sistema de gestión integrado de ventas, donde se trabajarán 5 módulos interconectados pero independientes, los cuales se irán desarrollando dentro del marco de trabajo SCRUM, según sean priorizadas las diferentes funcionalidades que sean necesarias dentro del desarrollo.  
 
-* Integrantes
 -------------
+#### Integrantes:
 
 1. María Osorio - LIDJM
 2. Andrés Delgado - cado10
@@ -14,8 +14,8 @@ Se propone analizar, diseñar y construir una aplicación software que permita c
 4. José Ignacio Valencia Díaz - jivd78 
 5. 
 
-* Presentaciones
 ---------------
+#### Presentaciones:
 
 1.  María Osorio
     Hola mi nombre es María Isabel, actual estudiante de Misión Tics..

@@ -12,7 +12,7 @@ Se propone analizar, diseñar y construir una aplicación software que permita c
 2. Andrés Delgado - cado10
 3. Milton Cesar Vargas Quiroz - hadez2505
 4. José Ignacio Valencia Díaz - jivd78 
-5. 
+5. Juan David López González - juandloopez
 
 ---------------
 #### Presentaciones:
@@ -27,5 +27,5 @@ Se propone analizar, diseñar y construir una aplicación software que permita c
     Soy ingeniero civil paisa, graduado de la Escuela de Ingeniería de Antioquia.
     He desarrollado mi carrera dentro de la ingeniería en ambientes administrativos y financieros, cercanos al Controlling de empresas y obras de construcción Industrial
     Deseo ampliar mi carrera con el dominio de la ciencia de datos y ultimamente con la programación de software otorgada por el Mintic.
-5.
+5.  Juan David López: Diseñador Visual de la Universidad de Caldas y estudiante de maestría en Diseño y Creación Interactiva. 
 

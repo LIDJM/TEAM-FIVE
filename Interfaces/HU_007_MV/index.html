@@ -7,38 +7,64 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Gestion de Vendedores</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Usuarios</title>
 	</head>
 	<body>
-		<main>
-			<h1>Gestion de vendedores</h1>
-			<section>
-				<label>Codigo de vendedor</label
-				><input type="text" name="" id="" /> <label>Nombre</label
-				><input type="text" name="" id="" /> <label>Apellido</label
-				><input type="text" name="" id="" />
-				<label>Identificacion</label
-				><input type="text" name="" id="" /> <label>Direccion</label
-				><input type="text" name="" id="" /> <label>Celular</label
-				><input type="text" name="" id="" /> <label>Email</label
-				><input type="text" name="" id="" />
-				<button>Agregar</button>
-				<button>Buscar</button>
-				<button>Editar</button>
-				<button>Eliminar</button>
-			</section>
-			<section>
+		<div class="contenedor-grid">
+			<div class="cabecera">
+				<label id="Usuarios">Ususarios</label>
+				<img src="http://lorempixel.com/100/50/sports/" alt="" />
+				<label id="home">Volver a inicio </label>
+				<input type="text" name="buscar" id="" placeholder="Buscar" />
+			</div>
+			<div class="barra_lateral">
 				<img
-					src="./gestion_vendedores.png"
+					src="http://lorempixel.com/100/50/sports/"
 					alt=""
-					srcset=""
-					width="25%"
-					height="25%"
+					id="logo"
 				/>
-			</section>
-			<section>
-				<textarea name="" id="" cols="30" rows="10"></textarea>
-			</section>
-		</main>
+				<div id="nombre"></div>
+				<button>Inicio</button>
+				<button>Ventas</button>
+				<button>Productos</button>
+				<button>Usuarios</button>
+			</div>
+			<div>
+				<form action="">
+					<input
+						type="number"
+						name=""
+						id=""
+						placeholder="Identificación"
+					/>
+					<input type="text" name="" id="" placeholder="Nombre" />
+					<input
+						type="text"
+						name=""
+						id=""
+						placeholder="Numero de contacto"
+					/>
+					<input type="text" name="" id="" placeholder="Dirección" />
+					<input type="email" name="" id="" placeholder="Email" />
+					<input type="text" name="" id="" placeholder="Rol" />
+					<input type="text" name="" id="" placeholder="Estado" />
+					<button>Registrar</button>
+					<button>Buscar</button>
+					<button>Actualizar</button>
+					<button>Eliminar</button>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

@@ -7,6 +7,11 @@
 }
 
 .contenedor {
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+
 	display: grid;
 	grid-template-columns: 240px auto;
 	place-items: center;
@@ -16,7 +21,8 @@
 	/* position: fixed; */
 	background-color: orange;
 	width: 240px;
-	height: 1000%;
+	height: 100%;
+	/* display: grid; */
 }
 
 .cabeza {
@@ -26,4 +32,10 @@
 
 .cuerpo {
 	background-color: blueviolet;
+}
+
+.interno2 {
+	background-color: white;
+	align-self: end;
+	justify-self: stretch;
 }

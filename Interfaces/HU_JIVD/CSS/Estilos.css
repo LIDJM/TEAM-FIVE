@@ -4,9 +4,10 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 240px;
+    width: 20%;  /*240px*/
     background: #DF491A;
     padding: 6px 14px;
+    float: left;
 }
 
 .sidebar .logo_content .logo{
@@ -149,10 +150,12 @@
 	margin-top: 20px;
 	justify-content: center;
 	align-items: center;
+    float: right;
+    width: 70%;
 }
 .table-wrapper {
 	min-width: 1000px;
-	background: #81f0d6;
+	background: white;
 	padding: 20px 25px;
 	margin: 1.6em auto;
 	border-radius: 3px;
@@ -175,3 +178,43 @@ table.table td i {
 	font-size: 19px;
 }
 
+.col-sm-7 {
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+}
+.btn-secondary {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: #df491a;
+}
+.btn-secondary:hover {
+	background: #f09c81;
+}
+
+.form-registro {
+	background-color: aliceblue;
+	padding: 20px;
+	border-radius: 20px;
+    width: 70%;
+    float: right;
+}
+
+.btn-primary {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: #df491a;
+}
+.btn-primary:hover {
+	background: #f09c81;
+}
+
+h1{
+    margin-left: 100;
+}
+
+.IDV{
+    float: center;
+}

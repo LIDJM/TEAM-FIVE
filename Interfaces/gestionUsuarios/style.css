@@ -157,6 +157,22 @@ body {
 .btn-secondary:hover {
 	background: #f09c81;
 }
+
+.form-registro {
+	background-color: aliceblue;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.btn-primary {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: #df491a;
+}
+.btn-primary:hover {
+	background: #f09c81;
+}
 thead {
 	background-color: #df491a;
 	color: #fff;

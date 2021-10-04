@@ -1,0 +1,71 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-design{
+     display: grid;
+     grid-template-columns: repeat(2, 50%);
+     height: 100vh;
+ }
+
+ .imagen {
+     background-image: url("../img/img1log.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+ }
+
+ .login {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .login_data{
+    border: none;
+    text-align: center;
+ }
+
+ .login_data h1{
+    font-weight: bold;  
+    font-size: 30px;
+    line-height: 37px;
+    color: #DF4413
+    
+ }
+ .login_data h2{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000
+ }
+
+ .login_data h3{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000
+ }
+
+ .input_group{
+   border: 2px solid #000000;
+   box-sizing: border-box;
+   border-radius: 6px;
+   margin-bottom: 20px;
+ }
+
+ .input-fill{
+    margin-bottom: 20px;
+    border: none;
+ }
+
+.btn {
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   color: #fff;
+   background: linear-gradient(180deg, #DF4413 0%, #DF6843 100%);
+   border-radius: 6px;
+   border:none
+   cursor: pointer;
+  
+}

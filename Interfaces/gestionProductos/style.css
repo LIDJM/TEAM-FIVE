@@ -252,26 +252,6 @@ margin-top: 20px;
 /* margin-right: calc(100% - 240px); */
 width: 100%;
 }
-/* .addProduct {
-    background: #DF491A;
-    height: 50px;
-    border-radius: 6px;
-    width: 150px;
-} */
-
-/* .addProduct a {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    border-radius: 12px;
-}
-
-.addProduct:hover{
-    color: #fff;
-    background: #F09C81;
-} */
 
 .inputBusqueda input {
     height: 50px;
@@ -279,7 +259,7 @@ width: 100%;
     position: relative;
  }
 
-.col-sm-7 {
+/* .col-sm-7 {
 	display: flex;
 	justify-content: flex-end;
 	align-content: center;
@@ -290,11 +270,12 @@ width: 100%;
 	align-content: center;
 	background-color: #df491a;
 }
-.btn-secondary:hover {
+.btn-primary:hover {
 	background: #f09c81;
-}
+} */
 
 .form-registro {
+    margin-top: 20px;
 	background-color: aliceblue;
 	padding: 20px;
 	border-radius: 20px;

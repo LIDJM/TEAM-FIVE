@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href= "style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
     <!-- Boxicons CDN link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title> Gestion de Productos </title>
@@ -13,9 +28,10 @@
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <div class="logo_name">NATUMARKET</div>
+                <!-- <div class="logo_name">NATUMARKET</div> -->
+                <img src="natuLogo.svg" alt="">
             </div>
-            <i class='bx bx-menu' id="btn" ></i>
+            <!-- <i class='bx bx-menu' id="btn" ></i> -->
         </div>
         <!-- <div>
             <div class="rol_user">Administrador</div>
@@ -62,6 +78,276 @@
     </div>
     <div class="page_content">
         <div class="text">Products Managment</div>
+		
+		<table id="agregarBuscar">
+			<tr>
+				<th>
+					<div class="addProduct">
+						<a href="#">                                 
+							<i class='bx bx-plus-circle'></i>
+							<span class="links_name"">Producto</span>
+						</a>
+					</div>
+				</th>
+				<th>
+					<div class="inputBusqueda">
+						<a href="#">
+							<input type="text" placeholder="Search...">
+							<span>
+								<i class='bx bx-search-alt'></i>
+							</span>
+						</a>
+					</div>
+				</th>
+			</tr>
+		</table>
+		
+        <div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						
+
+						<!-- <div class="searchProduct">
+							<i class="bx bx-search"></i>
+							<input type="text" placeholder="Search...">
+						</div>  -->
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Id Producto</th>
+							<th>Producto</th>
+							<th>Valor Unitario</th>
+							<th>Estado</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>
+								<a href="#">
+									<!-- <img
+										src="/examples/images/avatar/1.jpg"
+										class="avatar"
+										alt="Avatar"
+									/> -->
+									Quinoa
+								</a>
+							</td>
+							<td>13000</td>
+							<td>
+								<span class="status text-success">&bull;</span>
+								Disponible
+							</td>
+							<td>
+								<a
+									href="#"
+									class="view"
+									title="View"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE417;</i></a
+								>
+								<a
+									href="#"
+									class="edit"
+									title="Edit"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE254;</i></a
+								>
+								<a
+									href="#"
+									class="delete"
+									title="Delete"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE872;</i></a
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<a href="#">
+									<!-- <img
+										src="/examples/images/avatar/2.jpg"
+										class="avatar"
+										alt="Avatar"
+									/> -->
+									Chia
+								</a>
+							</td>
+							<td>15000</td>
+							<td>
+								<span class="status text-success">&bull;</span>
+								Disponible
+							</td>
+							<td>
+								<a
+									href="#"
+									class="view"
+									title="View"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE417;</i></a
+								>
+								<a
+									href="#"
+									class="edit"
+									title="Edit"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE254;</i></a
+								>
+								<a
+									href="#"
+									class="delete"
+									title="Delete"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE872;</i></a
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<a href="#">
+									<!-- <img
+										src="/examples/images/avatar/3.jpg"
+										class="avatar"
+										alt="Avatar"
+									/> -->
+									Granola
+								</a>
+							</td>
+							<td>10000</td>
+							<td>
+								<span class="status text-warning">&bull;</span>
+								No Disponible
+							</td>
+							<td>
+								<a
+									href="#"
+									class="view"
+									title="View"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE417;</i></a
+								>
+								<a
+									href="#"
+									class="edit"
+									title="Edit"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE254;</i></a
+								>
+								<a
+									href="#"
+									class="delete"
+									title="Delete"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE872;</i></a
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<a href="#">
+									<!-- <img
+										src="/examples/images/avatar/4.jpg"
+										class="avatar"
+										alt="Avatar"
+									/> -->
+									Yogurt Griego
+								</a>
+							</td>
+							<td>15000</td>
+							<td>
+								<span class="status text-success">&bull;</span>
+								Disponible
+							</td>
+							<td>
+								<a
+									href="#"
+									class="view"
+									title="View"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE417;</i></a
+								>
+								<a
+									href="#"
+									class="edit"
+									title="Edit"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE254;</i></a
+								>
+								<a
+									href="#"
+									class="delete"
+									title="Delete"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE872;</i></a
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>
+								<a href="#">
+									<!-- <img
+										src="/examples/images/avatar/5.jpg"
+										class="avatar"
+										alt="Avatar"
+									/> -->
+									Crema de Maní
+								</a>
+							</td>
+							<td>14000</td>
+							<td>
+								<span class="status text-warning">&bull;</span>
+								No Disponible
+							</td>
+							<td>
+								<a
+									href="#"
+									class="view"
+									title="View"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE417;</i></a
+								>
+								<a
+									href="#"
+									class="edit"
+									title="Edit"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE254;</i></a
+								>
+								<a
+									href="#"
+									class="delete"
+									title="Delete"
+									data-toggle="tooltip"
+									><i class="material-icons">&#xE872;</i></a
+								>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<!-- <div class="clearfix"> -->
+					<!-- <div class="row"> -->
+						<!-- <div class="col-sm-5"> -->
+							<!-- <h2>User <b>Management</b></h2> -->
+						<!-- </div> -->
+						<!-- <div class="col-sm-7">
+							<a href="#" class="btn btn-secondary">
+								<i class="material-icons">&#xE147;</i>
+								<span>Add New Product</span>
+							</a>
+						</div> -->
+					<!-- </div> -->
+				<!-- </div> -->
+			</div>
+		</div>
     </div>
 </body>
 </html>

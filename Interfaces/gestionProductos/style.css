@@ -27,19 +27,37 @@ body{
 .sidebar .logo_content .logo{
     color: #fff;
     display: flex;
-    height: 50px;
+    height: 100px;
     width: 100%;
     align-items: center;
 }
 
 .logo_content .logo i{
     font-size: 28px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 .logo_content .logo .logo_name{
     font-size: 20px;
     font-weight: 600;
+}
+
+/* imagen logo  */
+@keyframes bounce {
+    50%{
+        transform: translateY(-10px);
+    }    
+}
+.logo_content .logo img{
+    border-radius: 0%;
+    margin: 0px;
+    /* padding: 10px; */
+    display: flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    /* z-index: 2; */
+    animation: bounce 0.5s ease 0.1s;
 }
 
 .sidebar #btn{
@@ -147,9 +165,11 @@ body{
     position: absolute;
     height: 100%;
     width: calc(100% - 240px);
+    /* width: 100%; */
     left: 240px;
     background-color: #C4C4C4;
-    padding: 12px 14px;
+    padding: 35px 50px;
+    /* padding: 0px; */
 } 
 
 .page_content .text{
@@ -160,9 +180,81 @@ body{
 }
 
 
+/* tabla de productos */
 
+.table-responsive {
+	display: flex;
+	margin-top: 0px;
+	justify-content: center;
+	align-items: center;
+}
+.table-wrapper {
+	/* min-width: 1000px; */
+	/* background: #81f0d6; */
+    background: #fff;
+	padding: 12px 14px;
+	margin: 1.6em auto;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+thead {
+	background-color: #df491a;
+	color: #fff;
+}
+tbody {
+    color: #000;
+}
+.table td a.view {
+	color: #03a9f4;
+}
+.table td a.edit {
+	color: #ffc107;
+}
+.table td a.delete {
+	color: #e34724;
+}
+.table td i {
+	font-size: 19px;
+}
 
+table.table td a {
+    color: #000;
 
+}
+
+#agregarBuscar {
+margin-top: 20px;
+/* margin-right: calc(100% - 240px); */
+width: 100%;
+}
+.addProduct {
+    background: #DF491A;
+    height: 50px;
+    border-radius: 6px;
+    width: 150px;
+}
+
+.addProduct a {
+    /* margin: 30px; */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.addProduct:hover{
+    /* color: #DF491A; */
+    color: #fff;
+    background: #F09C81;
+}
+
+.inputBusqueda input {
+    height: 50px;
+    border-radius: 6px;
+    position: relative;
+ }
 
 
 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Consultas_Ventas</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="Estilos.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="logo_content">
+			<div class="logo">
+				<!-- <div class="logo_name">NATUMARKET</div> -->
+				<img src="../IMAGES/NatuMarketLogo.png" alt="" width="200" height="70">
+			</div>
+			<i class='bx bx-menu' id="btn"></i>
+		</div>
+		<!-- <div>
+                <div class="rol_user">Administrador</div>
+            </div> -->
+		<ul class="nav_list">
+			<li>
+				<a href="./adminHome.html">
+					<i class='bx bx-home'></i>
+					<span class="links_name">Inicio</span>
+				</a>
+				<!-- <span class="tooltip">Inicio</span> -->
+			</li>
+			<li>
+				<a href="../CSS/registroVentas.html">
+					<i class='bx bx-store'></i>
+					<span class="links_name">Registrar Ventas</span>
+				</a>
+			</li>
+			<li>
+				<a href="./productos.html">
+					<i class='bx bx-box'></i>
+					<span class="links_name">Productos</span>
+				</a>
+			</li>
+			<li>
+				<a href="./usuarios.html">
+					<i class='bx bxs-contact'></i>
+					<span class="links_name">Usuarios</span>
+				</a>
+			</li>
+		</ul>
+		<div class="profile_content">
+			<div class="profile">
+				<div class="profile_details">
+					<img src="../IMAGES/profile_picture.jpg" alt="">
+					<div class="name_job">
+						<div class="name">Peter Parker</div>
+						<div class="job">Admin</div>
+					</div>
+				</div>
+				<i class='bx bx-log-out' id="log_out"></i>
+			</div>
+		</div>
+	</div>
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-5">
+						<!-- <h2>User <b>Management</b></h2> -->
+					</div>
+					<div class="col-sm-7">
+						<a href="../CSS/registroVentas.html" class="btn btn-secondary">
+							<i class="material-icons">&#xE147;</i>
+							<span>Registrar Nueva Venta</span></a>
+					</div>
+				</div>
+			</div>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Id Venta (Hora_IDVendedor)</th>
+						<th>Nombre_Vendedor</th>
+						<th>ID Item</th>
+						<th>Descripcion Item</th>
+						<th>Cantidad</th>
+						<th>U.M.</th>
+						<th>Precio Unitario Item</th>
+						<th>Precio Total </th>
+						<th>Codigo_Cliente</th>
+						<th>Descuento Comercial (%)</th>
+						<th>Valor Final</th>
+						<th>No. Factura Generado</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>172545_015</td>
+						<td>
+							<a href="#">
+								<!--<img src="../IMAGES/profile_picture.jpg" alt="Avatar" width="30" height="30" />-->
+								Michael Holz
+							</a>
+						</td>
+						<td>604</td>
+						<td>Calabacín Importado</td>
+						<td>4,00</td>
+						<td>Un.</td>
+						<td>$2.725</td>
+						<td>$10.900</td>
+						<td>905.725.987-4</td>
+						<td>5%</td>
+						<td>$10.335</td>
+						<td>NM_0010591</td>
+						<td>
+							<a href="#" class="view" title="View" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a>
+							<a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+									class="material-icons">&#xE254;</i></a>
+							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>172500_015</td>
+						<td>
+							<a href="#">
+								<!--<img src="../IMAGES/profile_picture.jpg" alt="Avatar" width="30" height="30" />-->
+								Michael Holz</a>
+						</td>
+						<td>235</td>
+						<td>Vainilla origen certificado: Madagascar</td>
+						<td>50,00</td>
+						<td>gr</td>
+						<td>$25.235,00</td>
+						<td>$1.261.750</td>
+						<td>905.725.987-4</td>
+						<td>5%</td>
+						<td>$1.198.663</td>
+						<td>NM_0010591</td>
+						<td>
+							<a href="#" class="view" title="View" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a>
+							<a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+									class="material-icons">&#xE254;</i></a>
+							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>141847_036</td>
+						<td>
+							<a href="#">
+								<!--<img src="../IMAGES/profile_picture.jpg" alt="Avatar" width="30" height="30" />-->
+								Antonio Moreno</a>
+						</td>
+						<td>721</td>
+						<td>Queso Ricotta Alpina</td>
+						<td>225,00</td>
+						<td>gr</td>
+						<td>$65,00</td>
+						<td>$14.625</td>
+						<td>71.779.399_9</td>
+						<td>5%</td>
+						<td>$13.824</td>
+						<td>NM_0010590</td>
+						<td>
+							<a href="#" class="view" title="View" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a>
+							<a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+									class="material-icons">&#xE254;</i></a>
+							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>112500_007</td>
+						<td>
+							<a href="#">
+								<!--<img src="../IMAGES/profile_picture.jpg" alt="Avatar" width="30" height="30" />-->
+								Mary Saveley</a>
+						</td>
+						<td>112</td>
+						<td>Arroz Arvoreo Marfil</td>
+						<td>2,50</td>
+						<td>kg</td>
+						<td>$17.200,00</td>
+						<td>$43.000</td>
+						<td>954.814.852_1</td>
+						<td>5%</td>
+						<td>$40.850</td>
+						<td>NM_0010589</td>
+						<td>
+							<a href="#" class="view" title="View" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a>
+							<a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+									class="material-icons">&#xE254;</i></a>
+							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>112535_007</td>
+						<td>
+							<a href="#">
+								<!--<img src="../IMAGES/profile_picture.jpg" alt="Avatar" width="30" height="30" />-->
+								Mary Saveley</a>
+						</td>
+						<td>981</td>
+						<td>Kiwi origen certificado Chile Chiquita </td>
+						<td>3,00</td>
+						<td>kg</td>
+						<td>$6.000</td>
+						<td>$18.000</td>
+						<td>954.814.852_1</td>
+						<td>5%</td>
+						<td>$17.100</td>
+						<td>NM_0010589</td>
+						<td>
+							<a href="#" class="view" title="View" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a>
+							<a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+									class="material-icons">&#xE254;</i></a>
+							<a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="clearfix">
+				<div class="row">
+					<div class="col-sm-5">
+						<!-- <h2>User <b>Management</b></h2> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

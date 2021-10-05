@@ -1,0 +1,140 @@
+// * {margin:0;padding: 0;border:0;}
+//     body{
+//         background:black;
+//         font-family: "calibri";
+//     }
+    
+//     header{
+//        width: 100%;
+//        overflow:hidden;
+//        background:#252932;
+//        margin-bottom:20px;
+//        border-bottom: 3px dashed black  ;
+//        color: #f2f2f2;
+//     }
+
+    
+
+ 
+
+//     nav{
+//         float: right;
+//         list-style: none;
+//         background:green;
+//         height: 50px;
+//         line-height: 30px;
+
+//     }
+
+//     .clearfix{
+//         clear: both;
+//     }
+// .wrapper {
+//     width: 90%;
+//     max-width: 1000px;
+//     margin: auto;
+//     overflow: hidden;
+//   }
+
+
+// .logo{
+
+//     color:#f2f2f2;
+//     font: size 50px;
+//     line-height:200px;
+//     float:left;
+// }
+// header nav{
+//     float: right;
+//     line-height: 200px;
+
+// }
+// header nav a{
+//     display:inline-block;
+//     color:#fff;
+//     text-decoration: none;
+//     padding:10px 20px;
+//     line-height:normal;
+//     font-size: 20px;
+//     font-weight: bold;
+//     -webkit-transition: all 500ms ease;
+//     -o-transition:all 500ms ease ;
+//     transition:all 500ms ease;
+// }
+
+// header nav a:hover {
+//     background:#f56f3a;
+//     border-radius: 50px;
+// }
+
+// .header2{
+//     position: fixed;
+//     height: 100px;
+// }
+
+// .header2 .logo{
+//     line-height:100;
+//     font-size: 30px;
+    
+// }
+
+// .header2 nav{
+//     line-height:100px;
+
+// }
+
+// #imagenfondo{
+
+//     width: 700px;
+//     height: 200px;
+//     background-image: url("imag/imageninicial.PNG");
+//     background-size: contain;
+//     background-position: center;
+// }
+// .contenido p {
+//     margin-bottom: 1em;
+//     line-height: normal;
+// }
+// footer{
+//     background: black;
+//     color: #fff;
+//     text-align: center;
+//     height: 50px;
+//     line-height: 50px;
+// }
+
+// footer nav a {
+// display:inline-block;
+// color:white
+// text decoration:none;
+// padding:10px 20px;
+// line-height:normal;
+// font-size: 20px;
+// font-weight: bold;
+// -webkit-transition: all 500ms ease;
+// -o-transition:all 500ms ease ;
+// transition:all 500ms ease;
+
+#menu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+   }
+
+#menu ul li {
+    background-color:#2e518b;
+   }
+
+#menu ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+   }   
+
+   

@@ -1,4 +1,6 @@
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
 	"name": "ProyectoBackend",
 	"version": "1.0.0",
 	"description": "",
@@ -20,4 +22,32 @@
 		"mongoose": "^6.0.10",
 		"nodemon": "^2.0.13"
 	}
+=======
+=======
+>>>>>>> 28bb9deb2ea5f29e9e636f2189505cf8a64d72c4
+  "name": "ProyectoBackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": " node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.10",
+    "nodemon": "^2.0.13"
+  }
+<<<<<<< HEAD
+>>>>>>> 28bb9de (CRUD Productos -> Crear Producto)
+=======
+>>>>>>> 28bb9deb2ea5f29e9e636f2189505cf8a64d72c4
 }

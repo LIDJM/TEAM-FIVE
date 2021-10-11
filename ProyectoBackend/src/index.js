@@ -27,6 +27,7 @@ app.use(express.json());
 //Rutas
 app.use('/api/usuarios', require('../routers/usuariosRouters'));
 app.use('/api/roles', require('../routers/rolesRouters'));
+app.use('/api/productos', require('../routers/productos'));
 
 /** Escuchar las peticiones */
 app.listen(Port, () => {

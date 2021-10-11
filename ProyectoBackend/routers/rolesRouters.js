@@ -11,8 +11,8 @@ router.get('/Show', getRoles);
 
 router.post('/New', setRol);
 
-router.put('/Upgrade', upgradeRol);
+router.put('/Upgrade/:id', upgradeRol);
 
-router.delete('/Delete', deleteRol);
+router.delete('/Delete/:id', deleteRol);
 
 module.exports = router;

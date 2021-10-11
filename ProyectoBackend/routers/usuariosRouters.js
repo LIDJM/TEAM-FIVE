@@ -2,14 +2,17 @@ const {Router} = require('express');
 const router = Router();
 const {
 	getUsuarios,
-	setUsuario,
+	newUsuario,
 	upgradeUsuario,
 	deleteUsuario,
+	setUsuario,
 } = require('../controllers/usuarioController');
 
 router.get('/Show', getUsuarios);
 
-router.post('/New', setUsuario);
+router.get('/Set', setUsuario);
+
+router.post('/New', newUsuario);
 
 router.put('/Upgrade/:id', upgradeUsuario);
 

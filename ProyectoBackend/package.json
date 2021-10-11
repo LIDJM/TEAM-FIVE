@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"name": "ProyectoBackend",
 	"version": "1.0.0",
 	"description": "",
@@ -22,6 +23,8 @@
 		"nodemon": "^2.0.13"
 	}
 =======
+=======
+>>>>>>> 28bb9deb2ea5f29e9e636f2189505cf8a64d72c4
   "name": "ProyectoBackend",
   "version": "1.0.0",
   "description": "",
@@ -43,5 +46,8 @@
     "mongoose": "^6.0.10",
     "nodemon": "^2.0.13"
   }
+<<<<<<< HEAD
 >>>>>>> 28bb9de (CRUD Productos -> Crear Producto)
+=======
+>>>>>>> 28bb9deb2ea5f29e9e636f2189505cf8a64d72c4
 }

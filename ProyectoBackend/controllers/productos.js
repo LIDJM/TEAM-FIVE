@@ -109,7 +109,7 @@ const eliminarProducto = async (req, resp = response) => {
 
 const getProducto = async (req, resp = response) => {
     const {codigo} = req.body;
-    const producto = await Producto.findOne({codigo}).populate('categoria');
+    const producto = await Producto.findOne({codigo}).populate('categoria').populate('unidad');
 
     resp.json({
         estatus: true,

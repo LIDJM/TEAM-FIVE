@@ -29,6 +29,7 @@ app.use('/api/usuarios', require('../routers/usuariosRouters'));
 app.use('/api/roles', require('../routers/rolesRouters'));
 app.use('/api/productos', require('../routers/productos'));
 app.use('/api/categorias', require('../routers/categorias'));
+app.use('/api/unidades', require('../routers/unidades'));
 
 /** Escuchar las peticiones */
 app.listen(Port, () => {

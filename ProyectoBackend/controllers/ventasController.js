@@ -6,41 +6,25 @@ const getVentas = async (req, resp = response) => {
 
     const ventas = await Ventas.find().populate('vendedor', 'cliente');
     //const ventas = await Ventas.find();
-
+    
     resp.json({
         ok: true,
         msg: 'listar ventas',
-        ventas
+        ventas,
     });
 }
 
 const setVentas = async (req, resp = response) => {
 
-    //const id = req.params._id;
     const venta = new Ventas(req.body);
-    try{
-        //let venta = await Ventas.findById({id});
     
-		//if (venta) {
-		//	return resp.status(400).json({
-		//		estatus: false,
-		//		msg: 'Ya existe una venta registrada con este id',
-        //        venta
-		//	});
-		//}
-
+    try{
         const ven = await venta.save();
-
+        
         resp.status(201).json({
             ok: true,
             msg: 'venta creada',
-            vendedor: ven.vendedor,
-            cliente: ven.cliente,
-            descr: ven.descripcion_item, 
-            qty: ven.cantidad, 
-            um: ven.unidad_medida, 
-            pu: ven.precio_unitario,
-            pvt: ven.precio_venta_total,
+            ven,
         });
 
     }catch (error){
@@ -69,19 +53,15 @@ const actualizarVenta = async (req, resp = response) => {
 		}
 		const {vendedor,
             cliente, 
-            descripcion_item, 
+            producto, 
             cantidad, 
-            unidad_medida, 
-            precio_unitario,
             precio_venta_total,
          } = req.body;
 
 		ventaActualizar = {vendedor,
             cliente, 
-            descripcion_item, 
+            producto,
             cantidad, 
-            unidad_medida, 
-            precio_unitario,
             precio_venta_total,
             };
 
@@ -91,10 +71,8 @@ const actualizarVenta = async (req, resp = response) => {
 			msg: 'venta actualizada',
             vendedor: ventaActualizar.vendedor,
 			cliente: ventaActualizar.cliente, 
-            descr: ventaActualizar.descripcion_item, 
+            prd: ventaActualizar.producto, 
             qty: ventaActualizar.cantidad, 
-            um: ventaActualizar.unidad_medida, 
-            pu: ventaActualizar.precio_unitario,
             pvt: ventaActualizar.precio_venta_total,
 		});
 	} catch (error) {

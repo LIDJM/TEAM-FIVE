@@ -12,22 +12,12 @@ const ventaSchema = Schema({
         ref: 'Cliente',
     },
 
-    descripcion_item: {
+    producto: {
         type: Schema.Types.ObjectId,
-        ref: 'Producto'
+        ref: 'Producto',
     },
 
     cantidad: {
-        type: Number,
-        required: true
-    },
-
-    unidad_medida: {
-        type: String,
-        required: true
-    },
-
-    precio_unitario: {
         type: Number,
         required: true
     },

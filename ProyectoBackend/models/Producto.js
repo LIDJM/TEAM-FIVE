@@ -4,7 +4,7 @@ const ProductoSchema = Schema({
 
     categoria: {
         type: Schema.Types.ObjectId,
-        ref: 'categoria',
+        ref: 'Categoria',
         required: true
     },
 
@@ -35,6 +35,12 @@ const ProductoSchema = Schema({
 
     precio_venta: {
         type: Number,
+        required: true
+    },
+
+    unidad: {
+        type: Schema.Types.ObjectId,
+        ref: 'Unidad',
         required: true
     },
 

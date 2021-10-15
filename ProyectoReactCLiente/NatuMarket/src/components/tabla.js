@@ -4,7 +4,7 @@ import './Tabla.css';
 const Tabla = (props) => {
 	return (
 		<>
-			<table id='agregarBuscar'>
+			{/* <table id='agregarBuscar'>
 				<div class='row'>
 					<tr>
 						<th>
@@ -32,7 +32,7 @@ const Tabla = (props) => {
 						</th>
 					</tr>
 				</div>
-			</table>
+			</table> */}
 			<div className='table-responsive'>
 				<div className='table-wrapper'>{props.Datos}</div>
 			</div>

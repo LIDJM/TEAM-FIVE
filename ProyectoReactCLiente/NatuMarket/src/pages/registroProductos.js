@@ -7,14 +7,14 @@ const registroProductos = () => {
 				<form action='' class=''>
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
 									placeholder='Categoría'
 								/>
 							</div>
-							<div class='col-md-8'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
@@ -25,7 +25,7 @@ const registroProductos = () => {
 					</div>
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
@@ -44,7 +44,7 @@ const registroProductos = () => {
 					</div>
                     <div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
@@ -63,7 +63,7 @@ const registroProductos = () => {
 					</div>
                     <div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
@@ -83,29 +83,10 @@ const registroProductos = () => {
 
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-8'>
-								<input
-									type='text'
-									class='form-control'
-									placeholder='Estado'
-								/>
-							</div>
-						</div>
-					</div>
-					<div class='form-group'>
-						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<select class='form-control' name='' id=''>
-									<option value='administrador'>Administrador</option>
-									<option value='almacenista'>Almacenista</option>
-									<option value='vendedor'>Vendedor</option>
-								</select>
-							</div>
-							<div class='col-md-4'>
-								<select class='form-control' name='' id=''>
-									<option value='activo'>Activo</option>
-									<option value='suspendido'>Pendiente</option>
-									<option value='desabilitado'>No activo</option>
+									<option value='disponible'>Disponible</option>
+									<option value='noDisponible'>No Disponible</option>
 								</select>
 							</div>
 						</div>

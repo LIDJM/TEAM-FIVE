@@ -1,3 +1,16 @@
+.page_content {
+	/* position: absolute; */
+	display: flex;
+	flex-direction: column;
+	/* height: 100%;
+	width: calc(100% - 240px);
+	left: 240px;
+	background-color: #c4c4c4;
+	padding: 35px 10px; */
+	justify-content: center;
+	align-items: center;
+}
+
 .table-responsive {
 	display: flex;
 	margin-top: 0px;
@@ -5,8 +18,6 @@
 	align-items: center;
 }
 .table-wrapper {
-	/* min-width: 1000px; */
-	/* background: #81f0d6; */
 	background: #fff;
 	padding: 12px 14px;
 	margin: 1.6em auto;
@@ -16,4 +27,40 @@
 thead {
 	background-color: #df491a;
 	color: #fff;
+}
+#agregarBuscar {
+	margin-top: 20px;
+	/* margin-right: calc(100% - 240px); */
+	width: 50%;
+}
+
+.row {
+	justify-content: space-evenly;
+}
+.btn.btn-primary {
+	background-color: #df491a;
+	color: #fff;
+	align-content: stretch;
+}
+
+.inputBusqueda input {
+	height: 50px;
+	border-radius: 6px;
+	position: relative;
+}
+
+table.table td a.view {
+	color: #03a9f4;
+	margin: 2px;
+}
+table.table td a.edit {
+	color: #ffc107;
+	margin: 2px;
+}
+table.table td a.delete {
+	color: #e34724;
+	margin: 2px;
+}
+table.table td i {
+	font-size: 19px;
 }

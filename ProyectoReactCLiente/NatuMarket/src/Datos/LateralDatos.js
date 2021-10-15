@@ -28,12 +28,6 @@ const LateralDatos = [
 		icon: <RiIcons.RiContactsBook2Fill />,
 		cName: 'nav-text',
 	},
-	{
-		title: 'Login',
-		path: '/login',
-		icon: <RiIcons.RiContactsBook2Fill />,
-		cName: 'nav-text',
-	},
 ];
 
 export default LateralDatos;

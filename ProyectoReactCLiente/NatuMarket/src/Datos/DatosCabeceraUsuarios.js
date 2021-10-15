@@ -16,6 +16,9 @@ const DatosCabeceraUsuarios = [
 	{
 		nombre: 'Estado',
 	},
+	{
+		nombre: '',
+	},
 ];
 
 export default DatosCabeceraUsuarios;

@@ -44,6 +44,11 @@ const ProductoSchema = Schema({
         required: true
     },
 
+    estado: {
+        type: String,
+        required: true
+    },
+
     fecha: {
         type: Date,
         default: Date.now

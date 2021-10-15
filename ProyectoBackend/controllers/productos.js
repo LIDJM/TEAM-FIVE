@@ -34,10 +34,6 @@ const setProducto = async (req, resp = response) => {
         })
     }
 
-    // resp.json({
-    //     ok: true,
-    //     msg: 'Crear Producto'
-    // });
 };
 
 const actualizarProducto = async (req, resp = response) => {
@@ -109,8 +105,9 @@ const eliminarProducto = async (req, resp = response) => {
 
 const getProducto = async (req, resp = response) => {
     const {codigo} = req.body;
-    const producto = await Producto.findOne({codigo}).populate('categoria').populate('unidad');
-
+    
+    const producto = await Producto.find({codigo}).populate('categoria').populate('unidad');
+    
     resp.json({
         estatus: true,
         msg: 'Busqueda de Producto',

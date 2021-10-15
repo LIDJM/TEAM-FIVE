@@ -26,6 +26,9 @@ const DatosCabeceraProductos = [
 	{
 		nombre: 'Estado',
 	},
+	{
+		nombre: '',
+	},
 ];
 
 export default DatosCabeceraProductos;

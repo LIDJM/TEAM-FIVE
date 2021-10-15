@@ -31,15 +31,36 @@ thead {
 #agregarBuscar {
 	margin-top: 20px;
 	/* margin-right: calc(100% - 240px); */
-	width: 100%;
+	width: 50%;
 }
 
 .row {
-	justify-content: center;
+	justify-content: space-evenly;
+}
+.btn.btn-primary {
+	background-color: #df491a;
+	color: #fff;
+	align-content: stretch;
 }
 
 .inputBusqueda input {
 	height: 50px;
 	border-radius: 6px;
 	position: relative;
+}
+
+table.table td a.view {
+	color: #03a9f4;
+	margin: 2px;
+}
+table.table td a.edit {
+	color: #ffc107;
+	margin: 2px;
+}
+table.table td a.delete {
+	color: #e34724;
+	margin: 2px;
+}
+table.table td i {
+	font-size: 19px;
 }

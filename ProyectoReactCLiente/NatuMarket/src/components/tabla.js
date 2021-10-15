@@ -9,10 +9,7 @@ const Tabla = (props) => {
 					<tr>
 						<th>
 							<div class='col-sm-7'>
-								<a
-									href='./ingresarProducto.html'
-									class='btn btn-primary'
-								>
+								<a href='/registroUsuarios' class='btn btn-primary'>
 									<i class='material-icons'>&#xE147;</i>
 									<span>Ingresar Producto</span>
 								</a>

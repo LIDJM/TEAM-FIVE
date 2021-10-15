@@ -5,17 +5,17 @@ import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
 
 const productos = () => {
 	const setEstado = (estado) => {
-		if (estado === true) {
+		if (estado === 'Disponible') {
 			return (
 				<td>
 					<span class='status text-success'>&bull;</span>
 					Disponible
 				</td>
 			);
-		} else if (estado === false) {
+		} else if (estado === 'No Disponible') {
 			return (
 				<td>
-					<span class='status text-warning'>&bull;</span>
+					<span class='status text-danger'>&bull;</span>
 					No Disponible
 				</td>
 			);

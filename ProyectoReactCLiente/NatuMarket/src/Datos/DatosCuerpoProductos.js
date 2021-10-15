@@ -8,7 +8,7 @@ const DatosCuerpoProductos = [
         precio_compra: '2000',
         precio_venta: '3000',
         unidad_medida: 'libra',
-        estado: true,
+        estado: 'Disponible',
 	},
 	{
 		categoria: 'Bebidas',
@@ -19,7 +19,7 @@ const DatosCuerpoProductos = [
         precio_compra: '12000',
         precio_venta: '15000',
         unidad_medida: 'litro',
-        estado: true,
+        estado: 'Disponible',
 	},
 	{
 		categoria: 'Semillas',
@@ -30,7 +30,7 @@ const DatosCuerpoProductos = [
         precio_compra: '18000',
         precio_venta: '21000',
         unidad_medida: 'libra',
-        estado: true,
+        estado: 'Disponible',
 	},
 	{
 		categoria: 'Snacks',
@@ -41,7 +41,7 @@ const DatosCuerpoProductos = [
         precio_compra: '10000',
         precio_venta: '13000',
         unidad_medida: 'libra',
-        estado: true,
+        estado: 'Disponible',
 	},
 ];
 

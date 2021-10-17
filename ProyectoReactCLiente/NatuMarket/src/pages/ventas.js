@@ -1,4 +1,5 @@
 import React from 'react';
+// import Tabla from '../components/Tabla';
 
 const ventas = () => {
 	return (

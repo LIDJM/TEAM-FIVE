@@ -1,5 +1,6 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
+import axios from 'axios';
 
 const registroUsuarios = () => {
 	const {
@@ -10,6 +11,22 @@ const registroUsuarios = () => {
 	} = useForm();
 	const onSubmit = (data) => console.log(data);
 	console.log(errors);
+
+	const registro = async (data) => {
+		const res = await axios({
+			method: 'POST',
+			url: 'http://localhost:4000//api/usuarios/New',
+			data: {
+				password: data.Clave,
+				cedula: data.Identificacion,
+				nombre: data.Nombre,
+				email: data.Email,
+				rol: '6163581191da7751087e0406',
+				estado: data.Estado,
+			},
+		});
+		console.log(res);
+	};
 
 	return (
 		<div className='page_content'>
@@ -65,13 +82,13 @@ const registroUsuarios = () => {
 					<div className='form-group'>
 						<div className='row'>
 							<div className='col-md-6'>
-								<select {...register}>
+								<select {...register('Rol', {})}>
 									<option value='Administrador'>Administrador</option>
 									<option value=' Vendedor'> Vendedor</option>
 								</select>
 							</div>
 							<div className='col-md-6'>
-								<select {...register}>
+								<select {...register('Estado', {})}>
 									<option value='Activo'>Activo</option>
 									<option value=' No Activo'> No Activo</option>
 									<option value=' Pendiente'> Pendiente</option>
@@ -80,7 +97,11 @@ const registroUsuarios = () => {
 						</div>
 					</div>
 
-					<input type='submit' className='btn btn-primary' />
+					<input
+						type='submit'
+						className='btn btn-primary'
+						onclick={handleSubmit(registro)}
+					/>
 				</form>
 			</div>
 		</div>

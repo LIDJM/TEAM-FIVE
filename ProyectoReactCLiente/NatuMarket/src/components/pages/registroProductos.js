@@ -42,7 +42,7 @@ const registroProductos = () => {
 							</div>
 						</div>
 					</div>
-                    <div class='form-group'>
+					<div class='form-group'>
 						<div class='row'>
 							<div class='col-md-6'>
 								<input
@@ -61,7 +61,7 @@ const registroProductos = () => {
 							</div>
 						</div>
 					</div>
-                    <div class='form-group'>
+					<div class='form-group'>
 						<div class='row'>
 							<div class='col-md-6'>
 								<input

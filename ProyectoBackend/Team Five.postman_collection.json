@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "5d279644-3c44-41a9-a95f-4510e93155e4",
+		"name": "Team Five",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Backend Usuarios",
+			"item": [
+				{
+					"name": "Mostrar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/usuarios/Show",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"Show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario Nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\":\"1234\",\n    \"cedula\":\"123456700000\",\n    \"nombre\":\"Cualquiera3\",\n    \"email\":\"cualquiera3@gmail.com\",\n    \"rol\":\"6163581191da7751087e0406\",\n    \"estado\":true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/api/usuarios/New",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"New"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"nombre\":\"Cualquiera252\"\n    \n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/api/usuarios/Upgrade/6163c4fc72130ec35d56c681",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"Upgrade",
+								"6163c4fc72130ec35d56c681"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/usuarios/Delete/6163c47dfc7c710eb56c13a3",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"Delete",
+								"6163c47dfc7c710eb56c13a3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostrar un usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\":\"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/api/usuarios/Set",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"Set"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Backend Rol",
+			"item": [
+				{
+					"name": "Mostrar Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/usuarios/Show",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"usuarios",
+								"Show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Rol",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/roles/New",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"roles",
+								"New"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Rol",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/roles/Upgrade/123",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"roles",
+								"Upgrade",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Rol",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/roles/Delete/123",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"roles",
+								"Delete",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Backend Ventas",
+			"item": [
+				{
+					"name": "Mostrar Ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/ventas/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"ventas",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendedor\":  \"6163c9a0088d7aca64eab435\",\r\n    \"cliente\":  \"6164f0d6e2a50011dc804182\",\r\n    \"producto\": \"6165cc69255654c1a93c107b\",\r\n    \"cantidad\": 5,\r\n    \"precio_venta_total\": 32500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/api/ventas/registrar",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"ventas",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Venta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendedor\": \"6163c992088d7aca64eab432\",\r\n    \"cliente\": \"6164f0c3e2a50011dc804181\",\r\n    \"producto\": \"6165cbf3255654c1a93c1079\",\r\n    \"cantidad\": 5,\r\n    \"precio_venta_total\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/api/ventas/actualizar/6165046cdae3f8322ee69356",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"ventas",
+								"actualizar",
+								"6165046cdae3f8322ee69356"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Venta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4001/api/ventas/eliminar/6165046cdae3f8322ee69356",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"ventas",
+								"eliminar",
+								"6165046cdae3f8322ee69356"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

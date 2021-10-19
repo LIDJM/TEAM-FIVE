@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabla from '../components/Tabla';
+import Tabla from '../Tabla/tabla';
 import DatosCabeceraVentas from '../Datos/DatosCabeceraVentas';
 import DatosCuerpoVentas from '../Datos/DatosCuerpoVentas';
 
@@ -18,7 +18,7 @@ const ventas = () => {
 						<tr>
 							<th>
 								<div class='col-sm-7'>
-									<a href='../registroVentas' class='btn btn-primary'>
+									<a href='/registroVentas' class='btn btn-primary'>
 										<i class='material-icons'>&#xE147;</i>
 										<span>Ingresar Venta</span>
 									</a>

@@ -10,9 +10,9 @@ const getVentas = async (req, resp = response) => {
 
     const ventas = await Ventas
     .find()
-    .populate('vendedor')
-    .populate('cliente')
-    .populate('producto');
+    .populate('vendedor', '_id nombre')
+    .populate('cliente', 'nombre')
+    .populate('producto', 'codigo descripcion precio_venta unidad');
     //const ventas = await Ventas.find();
     
     resp.json({

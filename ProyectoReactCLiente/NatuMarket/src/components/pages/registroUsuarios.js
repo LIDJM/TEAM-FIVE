@@ -12,22 +12,6 @@ const registroUsuarios = () => {
 	const onSubmit = (data) => console.log(data);
 	console.log(errors);
 
-	const registro = async (data) => {
-		const res = await axios({
-			method: 'POST',
-			url: 'http://localhost:4000//api/usuarios/New',
-			data: {
-				password: data.Clave,
-				cedula: data.Identificacion,
-				nombre: data.Nombre,
-				email: data.Email,
-				rol: '6163581191da7751087e0406',
-				estado: data.Estado,
-			},
-		});
-		console.log(res);
-	};
-
 	return (
 		<div className='page_content'>
 			<div className='formulario'>
@@ -97,11 +81,7 @@ const registroUsuarios = () => {
 						</div>
 					</div>
 
-					<input
-						type='submit'
-						className='btn btn-primary'
-						onclick={handleSubmit(registro)}
-					/>
+					<input type='submit' className='btn btn-primary' />
 				</form>
 			</div>
 		</div>

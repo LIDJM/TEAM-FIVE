@@ -1,3 +1,10 @@
+import axios from 'axios';
+const mostrar = async () => {
+	const response = await axios.get(
+		'http://localhost:4001/api/usuarios/Show'
+	);
+	console.log(response);
+};
 const DatosCuerpoUsuarios = [
 	{
 		cedula: '1234567',
@@ -29,4 +36,4 @@ const DatosCuerpoUsuarios = [
 	},
 ];
 
-export default DatosCuerpoUsuarios;
+export {DatosCuerpoUsuarios, mostrar};

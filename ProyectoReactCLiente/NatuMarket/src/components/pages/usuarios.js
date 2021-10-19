@@ -1,7 +1,10 @@
 import React from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
-import DatosCuerpoUsuarios from '../Datos/DatosCuerpoUsuarios';
+import {
+	DatosCuerpoUsuarios,
+	mostrar,
+} from '../Datos/DatosCuerpoUsuarios';
 
 const usuarios = () => {
 	const setEstado = (estado) => {
@@ -28,7 +31,7 @@ const usuarios = () => {
 			);
 		}
 	};
-
+	mostrar();
 	return (
 		<>
 			<div className='page_content'>

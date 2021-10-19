@@ -24,8 +24,8 @@ const UsuarioSchema = Schema({
 		ref: 'Rol',
 	},
 	estado: {
-		type: Boolean,
-		required: true,
+		type: Schema.Types.ObjectId,
+		ref: 'Estado',
 	},
 });
 

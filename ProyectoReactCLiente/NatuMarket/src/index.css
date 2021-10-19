@@ -1,17 +1,55 @@
-body {
-	background: #c4c4c4;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-	/* position: relative;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
 	min-height: 100vh;
 	width: 100%;
 	overflow: hidden;
+	background-color: #df491a;
+}
+
+#root {
+	min-height: 100vh;
 	display: grid;
-	display: grid;
-	grid-template-columns: 240px auto;
-	place-items: center;
-	color: #566787;
-	font-size: 13px;
-	margin-bottom: 0%; */
+	grid-template:
+		'navbar' 80px
+		'sidebar' 100px
+		'main' auto;
+}
+
+.barraNavegacion {
+	grid-area: navbar;
+}
+
+.menu-nav.active {
+	grid-area: sidebar;
+	background-color: #df491a;
+}
+
+.menu-nav {
+	background-color: #df491a;
+}
+
+.page_content {
+	grid-area: main;
+	background-color: #c4c4c4;
+}
+
+.menu-bars {
+	margin-left: 2rem;
+	font-size: 2rem;
+	background: none;
 }
 
 .barraNavegacion {
@@ -21,15 +59,10 @@ body {
 	justify-content: start;
 	align-items: center;
 }
-.menu-bars {
-	margin-left: 2rem;
-	font-size: 2rem;
-	background: none;
-}
+
 .menu-nav {
-	/* grid-row: 1/3; */
 	background-color: #df491a;
-	width: 250px;
+	width: 240px;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -84,4 +117,25 @@ body {
 
 span {
 	margin-left: 16px;
+}
+
+.btn.btn-primary {
+	background-color: #df491a;
+}
+
+.btn-primary :active {
+	background-color: #f09c81;
+}
+@media (min-width: 600px) {
+	#root {
+		grid-template:
+			'navbar navbar' 80px
+			'sidebar main' auto/
+			240px auto;
+	}
+}
+.formulario {
+	background-color: #f09c81;
+	padding: 20px;
+	border-radius: 5px;
 }

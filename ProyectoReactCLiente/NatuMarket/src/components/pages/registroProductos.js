@@ -1,35 +1,35 @@
 import React from 'react';
 
-const registroUsuarios = () => {
+const registroProductos = () => {
 	return (
 		<div className='formulario'>
 			<form action='' class='form-registro'>
 				<form action='' class=''>
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
-									placeholder='Identificación'
+									placeholder='Categoría'
 								/>
 							</div>
-							<div class='col-md-8'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
-									placeholder='Nombre'
+									placeholder='Código'
 								/>
 							</div>
 						</div>
 					</div>
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<input
 									type='text'
 									class='form-control'
-									placeholder='Telefono'
+									placeholder='Descripción'
 								/>
 							</div>
 
@@ -37,7 +37,45 @@ const registroUsuarios = () => {
 								<input
 									type='text'
 									class='form-control'
-									placeholder='Dirección'
+									placeholder='Imagen'
+								/>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<div class='row'>
+							<div class='col-md-6'>
+								<input
+									type='text'
+									class='form-control'
+									placeholder='Stock'
+								/>
+							</div>
+
+							<div class='col-md-6'>
+								<input
+									type='text'
+									class='form-control'
+									placeholder='Unidad de Medida'
+								/>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<div class='row'>
+							<div class='col-md-6'>
+								<input
+									type='text'
+									class='form-control'
+									placeholder='Precio de Compra'
+								/>
+							</div>
+
+							<div class='col-md-6'>
+								<input
+									type='text'
+									class='form-control'
+									placeholder='Precio de Venta'
 								/>
 							</div>
 						</div>
@@ -45,29 +83,10 @@ const registroUsuarios = () => {
 
 					<div class='form-group'>
 						<div class='row'>
-							<div class='col-md-8'>
-								<input
-									type='text'
-									class='form-control'
-									placeholder='Email'
-								/>
-							</div>
-						</div>
-					</div>
-					<div class='form-group'>
-						<div class='row'>
-							<div class='col-md-4'>
+							<div class='col-md-6'>
 								<select class='form-control' name='' id=''>
-									<option value='administrador'>Administrador</option>
-									<option value='almacenista'>Almacenista</option>
-									<option value='vendedor'>Vendedor</option>
-								</select>
-							</div>
-							<div class='col-md-4'>
-								<select class='form-control' name='' id=''>
-									<option value='activo'>Activo</option>
-									<option value='suspendido'>Pendiente</option>
-									<option value='desabilitado'>No activo</option>
+									<option value='disponible'>Disponible</option>
+									<option value='noDisponible'>No Disponible</option>
 								</select>
 							</div>
 						</div>
@@ -80,4 +99,4 @@ const registroUsuarios = () => {
 	);
 };
 
-export default registroUsuarios;
+export default registroProductos;

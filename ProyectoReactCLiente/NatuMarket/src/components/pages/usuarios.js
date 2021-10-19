@@ -1,25 +1,32 @@
 import React from 'react';
-import Tabla from '../components/Tabla';
-import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
-import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
+import Tabla from '../Tabla/tabla';
+import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
+import DatosCuerpoUsuarios from '../Datos/DatosCuerpoUsuarios';
 
-const productos = () => {
+const usuarios = () => {
 	const setEstado = (estado) => {
-		if (estado === 'Disponible') {
+		if (estado === 'autorizado') {
 			return (
 				<td>
 					<span class='status text-success'>&bull;</span>
-					Disponible
+					Autorizado
 				</td>
 			);
-		} else if (estado === 'No Disponible') {
+		} else if (estado === 'pendiente') {
+			return (
+				<td>
+					<span class='status text-warning'>&bull;</span>
+					Pendiente
+				</td>
+			);
+		} else if (estado === 'no autorizado') {
 			return (
 				<td>
 					<span class='status text-danger'>&bull;</span>
-					No Disponible
+					No Autorizado
 				</td>
 			);
-		} 
+		}
 	};
 
 	return (
@@ -30,9 +37,9 @@ const productos = () => {
 						<tr>
 							<th>
 								<div class='col-sm-7'>
-									<a href='/registroProductos' class='btn btn-primary'>
+									<a href='/registroUsuarios' class='btn btn-primary'>
 										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar Producto</span>
+										<span>Ingresar nuevo Usuario</span>
 									</a>
 								</div>
 							</th>
@@ -59,47 +66,40 @@ const productos = () => {
 						<table class='table table-striped table-hover'>
 							<thead>
 								<tr>
-									{DatosCabeceraProductos.map((item, index) => {
+									{DatosCabeceraUsuarios.map((item, index) => {
 										return <th key='{index}'>{item.nombre}</th>;
 									})}
 								</tr>
 							</thead>
 							<tbody>
-								{DatosCuerpoProductos.map((item, index) => {
+								{DatosCuerpoUsuarios.map((item, index) => {
 									return (
 										<tr key={index}>
-											<td>{item.categoria}</td>
-											<td>{item.codigo}</td>
-											<td>{item.descripcion}</td>
-											<td>{item.imagen}</td>
-											<td>{item.stock}</td>
-											<td>{item.precio_compra}</td>
-											<td>{item.precio_venta}</td>
-											<td>{item.unidad_medida}</td>
+											<td>{item.cedula}</td>
+											<td>{item.nombre}</td>
+											<td>{item.email}</td>
+											<td>{item.rol}</td>
 											{setEstado(item.estado)}
 											<td>
 												<a
 													href='#'
 													class='view'
 													title='View'
-													data-toggle='tooltip'
-												>
+													data-toggle='tooltip'>
 													<i class='material-icons'>&#xE417;</i>
 												</a>
 												<a
 													href='#'
 													class='edit'
 													title='Edit'
-													data-toggle='tooltip'
-												>
+													data-toggle='tooltip'>
 													<i class='material-icons'>&#xE254;</i>
 												</a>
 												<a
 													href='#'
 													class='delete'
 													title='Delete'
-													data-toggle='tooltip'
-												>
+													data-toggle='tooltip'>
 													<i class='material-icons'>&#xE872;</i>
 												</a>
 											</td>
@@ -115,25 +115,4 @@ const productos = () => {
 	);
 };
 
-export default productos;
-
-// import React from 'react';
-// import Tabla from '../components/Tabla';
-// import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
-
-// const productos = () => {
-	
-	
-	// return (
-	// 	<div>
-	// 		<h1>Productos</h1>
-	// 		<Tabla
-	// 			DatosCabecera={DatosCabeceraProductos.map((item, index) => {
-	// 				return <th key='index'>{item.nombre}</th>;
-	// 			})}
-	// 		></Tabla>
-	// 	</div>
-	// );
-// };
-
-// export default productos;
+export default usuarios;

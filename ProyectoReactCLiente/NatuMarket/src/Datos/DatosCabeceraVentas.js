@@ -20,6 +20,12 @@ const DatosCabeceraVentas = [
 	{
 		nombre: 'Fecha',
 	},
+    {
+		nombre: 'Registro Único',
+	},
+    {
+		nombre: 'Acciones',
+	},
 ];
 
 export default DatosCabeceraVentas;

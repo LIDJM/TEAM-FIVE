@@ -18,9 +18,9 @@ const ventas = () => {
 						<tr>
 							<th>
 								<div class='col-sm-7'>
-									<a href='/registroProductos' class='btn btn-primary'>
+									<a href='../registroVentas' class='btn btn-primary'>
 										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar Producto</span>
+										<span>Ingresar Venta</span>
 									</a>
 								</div>
 							</th>
@@ -42,8 +42,8 @@ const ventas = () => {
 						</tr>
 					</div>
 				</table>
-				<Tabla 
-					Datos = {
+				<Tabla
+					Datos={
 						<table class='table table-striped table-hover'>
 							<thead>
 								<tr>
@@ -54,26 +54,51 @@ const ventas = () => {
 							</thead>
 							<tbody>
 								{DatosCuerpoVentas.map((item, index) => {
-										return (
-											<tr key = {index}>
-												<th> {item.vendedor} </th>
-												<th> {item.cliente} </th>
-												<th> {item.producto} </th>
-												<th> {item.cantidad} </th>
-												<th> {item.precio_unitario} </th>
-												<th>
-													{setVentasTotal(item.precio_unitario, item.cantidad)}
-												</th>
-												<th> {item.fecha} </th>
-											</tr>
-										)
+									return (
+										<tr key={index}>
+											<td> {item.vendedor} </td>
+											<td> {item.cliente} </td>
+											<td> {item.producto} </td>
+											<td> {item.cantidad} </td>
+											<td> {item.precio_unitario} </td>
+											{setVentasTotal(item.precio_unitario, item.cantidad)}
+											<td> {item.fecha} </td>
+											<td> {item.id} </td>
+											<td>
+												<a
+													href='#'
+													class='view'
+													title='View'
+													data-toggle='tooltip'
+												>
+													<i class='material-icons'>&#xE417;</i>
+												</a>
+												<a
+													href='#'
+													class='edit'
+													title='Edit'
+													data-toggle='tooltip'
+												>
+													<i class='material-icons'>&#xE254;</i>
+												</a>
+												<a
+													href='#'
+													class='delete'
+													title='Delete'
+													data-toggle='tooltip'
+												>
+													<i class='material-icons'>&#xE872;</i>
+												</a>
+											</td>
+										</tr>
+									)
 								})}
 							</tbody>
 
 						</table>
 					}
 				>
-					
+
 				</Tabla>
 			</div>
 		</>

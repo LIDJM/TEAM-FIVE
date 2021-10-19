@@ -11,6 +11,7 @@ import usuarios from './pages/usuarios';
 import ventas from './pages/ventas';
 import registroUsuarios from './pages/registroUsuarios';
 import registroProductos from './pages/registroProductos';
+import registroVentas from './pages/registroVentas';
 
 function App() {
 	return (
@@ -29,6 +30,10 @@ function App() {
 					<Route
 						path='/registroProductos'
 						component={registroProductos}
+					/>
+					<Route
+						path='/registroVentas'
+						component={registroVentas}
 					/>
 				</Switch>
 			</Router>

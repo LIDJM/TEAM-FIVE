@@ -1,10 +1,18 @@
 const {response} = require('express');
 const Ventas = require('../models/ventasModels');
-
+const Rol = require('../models/rolModels');
+const Cliente = require('../models/clienteModels');
+const Producto = require('../models/Producto');
+const Usuario = require('../models/usuarioModels');
+const Unidad = require('../models/UnidadModel');
 
 const getVentas = async (req, resp = response) => {
 
-    const ventas = await Ventas.find().populate('vendedor', 'cliente');
+    const ventas = await Ventas
+    .find()
+    .populate('vendedor', '_id nombre')
+    .populate('cliente', 'nombre')
+    .populate('producto', 'codigo descripcion precio_venta unidad');
     //const ventas = await Ventas.find();
     
     resp.json({

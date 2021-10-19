@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-color: #df491a;
+}
+
+#root {
+	min-height: 100vh;
+	display: grid;
+	grid-template:
+		'navbar' 80px
+		'sidebar' 100px
+		'main' auto;
+}
+
+.barraNavegacion {
+	grid-area: navbar;
+}
+
+.menu-nav.active {
+	grid-area: sidebar;
+	background-color: #df491a;
+}
+
+.menu-nav {
+	background-color: #df491a;
+}
+
+.page_content {
+	grid-area: main;
+	background-color: #c4c4c4;
+}
+
+.menu-bars {
+	margin-left: 2rem;
+	font-size: 2rem;
+	background: none;
+}
+
+.barraNavegacion {
+	background-color: #df491a;
+	height: 80px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.menu-nav {
+	background-color: #df491a;
+	width: 240px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	transition: 850ms;
+}
+
+.menu-nav.active {
+	left: 0;
+	transition: 350ms;
+}
+
+.nav-text {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 8px 0px 8px 16px;
+	list-style: none;
+	height: 60px;
+}
+
+.nav-text a {
+	text-decoration: none;
+	color: #f5f5f5;
+	font-size: 18px;
+	width: 95%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	border-radius: 4px;
+}
+
+.nav-text a:hover {
+	background: #f09c81;
+}
+
+.menu-nav-items {
+	width: 100%;
+}
+
+.barraNavegacion-toggle {
+	background-color: #df491a;
+	width: 100%;
+	height: 80px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+span {
+	margin-left: 16px;
+}
+
+.btn.btn-primary {
+	background-color: #df491a;
+}
+
+.btn-primary :active {
+	background-color: #f09c81;
+}
+@media (min-width: 600px) {
+	#root {
+		grid-template:
+			'navbar navbar' 80px
+			'sidebar main' auto/
+			240px auto;
+	}
+}
+.formulario {
+	background-color: #f09c81;
+	padding: 20px;
+	border-radius: 5px;
+}

@@ -10,10 +10,10 @@ const googleLogin = async (req, resp = response) => {
 		let usuario = await Usuario.findOne({
 			email,
 			idToken,
-		}).populate('rol');
+		}).populate('estado');
 
 		if (usuario) {
-			if (usuario.rol.name === 'Indefinido') {
+			if (usuario.rol.name === 'pendiente') {
 				resp.status(401).json({
 					ok: false,
 					msg: 'Usuario no autorizado por el admin',

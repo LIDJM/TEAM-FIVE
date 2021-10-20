@@ -18,12 +18,12 @@ const UsuarioSchema = Schema({
 		unique: true,
 	},
 	rol: {
-		type: Schema.Types.ObjectId,
-		ref: 'Rol',
-	},
-	estado: {
 		type: String,
 		required: true,
+	},
+	estado: {
+		type: Schema.Types.ObjectId,
+		ref: 'Estado',
 		default: 'pendiente',
 	},
 });

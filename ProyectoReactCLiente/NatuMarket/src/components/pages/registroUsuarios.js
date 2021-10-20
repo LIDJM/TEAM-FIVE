@@ -10,11 +10,13 @@ const registroUsuarios = () => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 	} = useForm();
 	const onSubmit = async (datos) => {
-		const setRol = (rol) => {
-			if (rol === 'administrador') {
-				return '616357de91da7751087e0403';
+		const setEstado = (estado) => {
+			if (estado === 'autorizado') {
+				return '617095431c27074d27d530e9';
+			} else if (estado === 'pendiente') {
+				return '6170957b1c27074d27d530ea';
 			} else {
-				return '6163581191da7751087e0406';
+				return '617095991c27074d27d530eb';
 			}
 		};
 
@@ -25,8 +27,8 @@ const registroUsuarios = () => {
 				cedula: datos.cedula,
 				nombre: datos.nombre,
 				email: datos.email,
-				rol: setRol(datos.rol),
-				estado: datos.estado,
+				rol: datos.rol,
+				estado: setEstado(datos.estado),
 			}
 		);
 

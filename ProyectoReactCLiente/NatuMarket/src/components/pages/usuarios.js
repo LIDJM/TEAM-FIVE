@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
 import {
@@ -6,7 +7,7 @@ import {
 	mostrar,
 } from '../Datos/DatosCuerpoUsuarios';
 
-const usuarios = () => {
+const Usuarios = () => {
 	const setEstado = (estado) => {
 		if (estado === 'autorizado') {
 			return (
@@ -118,4 +119,4 @@ const usuarios = () => {
 	);
 };
 
-export default usuarios;
+export default Usuarios;

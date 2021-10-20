@@ -2,12 +2,18 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
-import {
-	DatosCuerpoUsuarios,
-	mostrar,
-} from '../Datos/DatosCuerpoUsuarios';
+import axios from 'axios';
 
 const Usuarios = () => {
+	const [usuarios, setUsuarios] = useState([]);
+
+	useEffect(async () => {
+		let response = await axios.get(
+			'http://localhost:4001/usuarios/Show'
+		);
+		setUsuarios(response.data);
+	}, []);
+
 	const setEstado = (estado) => {
 		if (estado === 'autorizado') {
 			return (
@@ -32,7 +38,6 @@ const Usuarios = () => {
 			);
 		}
 	};
-	mostrar();
 	return (
 		<>
 			<div className='page_content'>
@@ -76,35 +81,35 @@ const Usuarios = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{DatosCuerpoUsuarios.map((item, index) => {
+								{usuarios.map((usuario) => {
 									return (
-										<tr key={index}>
-											<td>{item.cedula}</td>
-											<td>{item.nombre}</td>
-											<td>{item.email}</td>
-											<td>{item.rol}</td>
-											{setEstado(item.estado)}
+										<tr>
+											<td>{usuario.cedula}</td>
+											<td>{usuario.nombre}</td>
+											<td>{usuario.email}</td>
+											<td>{usuario.rol.nombre}</td>
+											{setEstado(usuario.estado)}
 											<td>
 												<a
 													href='#'
-													class='view'
+													className='view'
 													title='View'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE417;</i>
+													<i className='material-icons'>&#xE417;</i>
 												</a>
 												<a
 													href='#'
-													class='edit'
+													className='edit'
 													title='Edit'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE254;</i>
+													<i className='material-icons'>&#xE254;</i>
 												</a>
 												<a
 													href='#'
-													class='delete'
+													className='delete'
 													title='Delete'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE872;</i>
+													<i className='material-icons'>&#xE872;</i>
 												</a>
 											</td>
 										</tr>

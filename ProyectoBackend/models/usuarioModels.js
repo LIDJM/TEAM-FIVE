@@ -7,12 +7,10 @@ const UsuarioSchema = Schema({
 	},
 	cedula: {
 		type: String,
-		required: true,
 		unique: true,
 	},
 	nombre: {
 		type: String,
-		required: true,
 	},
 	email: {
 		type: String,
@@ -24,8 +22,9 @@ const UsuarioSchema = Schema({
 		ref: 'Rol',
 	},
 	estado: {
-		type: Schema.Types.ObjectId,
-		ref: 'Estado',
+		type: String,
+		required: true,
+		default: 'pendiente',
 	},
 });
 

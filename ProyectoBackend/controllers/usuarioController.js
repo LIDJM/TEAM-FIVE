@@ -6,13 +6,9 @@ const Cliente = require('../models/clienteModels');
 const Producto = require('../models/Producto');
 
 const getUsuarios = async (req, resp = response) => {
-	const usuarios = await Usuario.find().populate('rol');
+	const usuarios = await Usuario.find().populate('estado');
 
-	resp.json({
-		estatus: true,
-		msg: 'Lista de usuarios',
-		usuarios,
-	});
+	resp.json(usuarios);
 };
 
 const newUsuario = async (req, resp = response) => {
@@ -91,7 +87,7 @@ const deleteUsuario = async (req, resp = response) => {
 
 		await Usuario.findByIdAndDelete(id);
 		return resp.status(201).json({
-			msg: 'Usuario Eliminado'
+			msg: 'Usuario Eliminado',
 		});
 	} catch (error) {
 		console.log(error);

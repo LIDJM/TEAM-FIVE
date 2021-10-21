@@ -7,18 +7,15 @@ const Login = () => {
 	const responseGoogle = async (respuesta) => {
 		console.log(respuesta);
 		try {
-			const {data} = await axios({
+			const resp = await axios({
 				method: 'POST',
-				url: 'http://localhost:4001/google/login',
+				url: 'http://localhost:4001/api/google/login',
 				headers: {
 					Authorization: `Bearer ${respuesta.tokenId}`,
 				},
 			});
-			console.log(data);
-		} catch (error) {
-			console.log(error.toJSON());
-			console.log(error.response.data);
-		}
+			console.log(resp);
+		} catch (error) {}
 	};
 
 	const {
@@ -63,7 +60,7 @@ const Login = () => {
 						<div className='col-md-12'>
 							<GoogleLogin
 								clientId='552058111179-58af81em76valb4mecmb1229ru2oekoe.apps.googleusercontent.com'
-								buttonText='Iniciar Sesión'
+								buttonText='PEPE'
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}
 								cookiePolicy={'single_host_origin'}

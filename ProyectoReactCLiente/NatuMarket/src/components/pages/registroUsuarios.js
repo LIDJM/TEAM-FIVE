@@ -10,6 +10,7 @@ const registroUsuarios = () => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 	} = useForm();
 	const onSubmit = async (datos) => {
+		console.log(datos);
 		const setEstado = (estado) => {
 			if (estado === 'autorizado') {
 				return '617095431c27074d27d530e9';

@@ -9,13 +9,14 @@ const Usuarios = () => {
 
 	useEffect(async () => {
 		let response = await axios.get(
-			'http://localhost:4001/usuarios/Show'
+			'http://localhost:4001/api/usuarios/Show'
 		);
+		console.log(response.data);
 		setUsuarios(response.data);
 	}, []);
 
 	const setEstado = (estado) => {
-		if (estado === 'autorizado') {
+		if (estado === '617095431c27074d27d530e9') {
 			return (
 				<td>
 					<span class='status text-success'>&bull;</span>
@@ -29,7 +30,7 @@ const Usuarios = () => {
 					Pendiente
 				</td>
 			);
-		} else if (estado === 'no autorizado') {
+		} else if (estado === '617095991c27074d27d530eb') {
 			return (
 				<td>
 					<span class='status text-danger'>&bull;</span>
@@ -87,7 +88,7 @@ const Usuarios = () => {
 											<td>{usuario.cedula}</td>
 											<td>{usuario.nombre}</td>
 											<td>{usuario.email}</td>
-											<td>{usuario.rol.nombre}</td>
+											<td>{usuario.rol}</td>
 											{setEstado(usuario.estado)}
 											<td>
 												<a

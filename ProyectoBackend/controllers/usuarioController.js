@@ -3,7 +3,7 @@ const {response} = require('express');
 const Usuario = require('../models/usuarioModels');
 
 const getUsuarios = async (req, resp = response) => {
-	const usuarios = await Usuario.find().populate('rol');
+	const usuarios = await Usuario.find().populate('estado');
 
 	resp.json(usuarios);
 };

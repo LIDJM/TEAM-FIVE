@@ -51,3 +51,7 @@ const googleLogin = async (req, resp = response) => {
 		msg: 'Google login exitoso',
 	});
 };
+
+module.exports = {
+	googleLogin,
+};

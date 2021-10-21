@@ -1,11 +1,22 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
-import DatosCuerpoUsuarios from '../Datos/DatosCuerpoUsuarios';
+import axios from 'axios';
 
-const usuarios = () => {
+const Usuarios = () => {
+	const [usuarios, setUsuarios] = useState([]);
+
+	useEffect(async () => {
+		let response = await axios.get(
+			'http://localhost:4001/api/usuarios/Show'
+		);
+		console.log(response.data);
+		setUsuarios(response.data);
+	}, []);
+
 	const setEstado = (estado) => {
-		if (estado === 'autorizado') {
+		if (estado === '617095431c27074d27d530e9') {
 			return (
 				<td>
 					<span class='status text-success'>&bull;</span>
@@ -19,7 +30,7 @@ const usuarios = () => {
 					Pendiente
 				</td>
 			);
-		} else if (estado === 'no autorizado') {
+		} else if (estado === '617095991c27074d27d530eb') {
 			return (
 				<td>
 					<span class='status text-danger'>&bull;</span>
@@ -28,7 +39,6 @@ const usuarios = () => {
 			);
 		}
 	};
-
 	return (
 		<>
 			<div className='page_content'>
@@ -72,35 +82,35 @@ const usuarios = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{DatosCuerpoUsuarios.map((item, index) => {
+								{usuarios.map((usuario) => {
 									return (
-										<tr key={index}>
-											<td>{item.cedula}</td>
-											<td>{item.nombre}</td>
-											<td>{item.email}</td>
-											<td>{item.rol}</td>
-											{setEstado(item.estado)}
+										<tr>
+											<td>{usuario.cedula}</td>
+											<td>{usuario.nombre}</td>
+											<td>{usuario.email}</td>
+											<td>{usuario.rol}</td>
+											{setEstado(usuario.estado)}
 											<td>
 												<a
 													href='#'
-													class='view'
+													className='view'
 													title='View'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE417;</i>
+													<i className='material-icons'>&#xE417;</i>
 												</a>
 												<a
 													href='#'
-													class='edit'
+													className='edit'
 													title='Edit'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE254;</i>
+													<i className='material-icons'>&#xE254;</i>
 												</a>
 												<a
 													href='#'
-													class='delete'
+													className='delete'
 													title='Delete'
 													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE872;</i>
+													<i className='material-icons'>&#xE872;</i>
 												</a>
 											</td>
 										</tr>
@@ -115,4 +125,4 @@ const usuarios = () => {
 	);
 };
 
-export default usuarios;
+export default Usuarios;

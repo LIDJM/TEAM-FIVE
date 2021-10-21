@@ -9,24 +9,33 @@ const registroUsuarios = () => {
 		formState: {errors},
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 	} = useForm();
-	const onSubmit = (data) => console.log(data);
-	console.log(errors);
+	const onSubmit = async (datos) => {
+		console.log(datos);
+		const setEstado = (estado) => {
+			if (estado === 'autorizado') {
+				return '617095431c27074d27d530e9';
+			} else if (estado === 'pendiente') {
+				return '6170957b1c27074d27d530ea';
+			} else {
+				return '617095991c27074d27d530eb';
+			}
+		};
 
-	const registro = async (data) => {
-		const res = await axios({
-			method: 'POST',
-			url: 'http://localhost:4000//api/usuarios/New',
-			data: {
-				password: data.Clave,
-				cedula: data.Identificacion,
-				nombre: data.Nombre,
-				email: data.Email,
-				rol: '6163581191da7751087e0406',
-				estado: data.Estado,
-			},
-		});
-		console.log(res);
+		const respuesta = await axios.post(
+			'http://localhost:4001/api/usuarios/New',
+			{
+				password: datos.password,
+				cedula: datos.cedula,
+				nombre: datos.nombre,
+				email: datos.email,
+				rol: datos.rol,
+				estado: setEstado(datos.estado),
+			}
+		);
+
+		console.log(respuesta);
 	};
+	console.log(errors);
 
 	return (
 		<div className='page_content'>
@@ -37,33 +46,26 @@ const registroUsuarios = () => {
 							<div className='col-md-6'>
 								<input
 									type='text'
-									placeholder='Identificacion'
-									{...register('Identificacion', {})}
+									placeholder='Cedula'
+									{...register('cedula', {})}
 								/>
 							</div>
 							<div className='col-md-6'>
 								<input
 									type='text'
 									placeholder='Nombre'
-									{...register('Nombre', {})}
+									{...register('nombre', {})}
 								/>
 							</div>
 						</div>
 					</div>
 					<div className='form-group'>
 						<div className='row'>
-							<div className='col-md-6'>
+							<div className='col-md-12'>
 								<input
 									type='text'
-									placeholder='Telefono'
-									{...register('Telefono', {})}
-								/>
-							</div>
-							<div className='col-md-6'>
-								<input
-									type='text'
-									placeholder='Direccion'
-									{...register('Direccion', {})}
+									placeholder='Password'
+									{...register('password', {})}
 								/>
 							</div>
 						</div>
@@ -74,7 +76,7 @@ const registroUsuarios = () => {
 								<input
 									type='email'
 									placeholder='Email'
-									{...register('Email', {})}
+									{...register('email', {})}
 								/>
 							</div>
 						</div>
@@ -82,26 +84,22 @@ const registroUsuarios = () => {
 					<div className='form-group'>
 						<div className='row'>
 							<div className='col-md-6'>
-								<select {...register('Rol', {})}>
-									<option value='Administrador'>Administrador</option>
-									<option value=' Vendedor'> Vendedor</option>
+								<select {...register('rol', {})}>
+									<option value='administrador'>Administrador</option>
+									<option value='vendedor'> Vendedor</option>
 								</select>
 							</div>
 							<div className='col-md-6'>
-								<select {...register('Estado', {})}>
-									<option value='Activo'>Activo</option>
-									<option value=' No Activo'> No Activo</option>
-									<option value=' Pendiente'> Pendiente</option>
+								<select {...register('estado', {})}>
+									<option value='autorizado'>Autorizado</option>
+									<option value='pendiente'>Pendiente</option>
+									<option value='no autorizado'>No autorizado</option>
 								</select>
 							</div>
 						</div>
 					</div>
 
-					<input
-						type='submit'
-						className='btn btn-primary'
-						onclick={handleSubmit(registro)}
-					/>
+					<input type='submit' className='btn btn-primary' />
 				</form>
 			</div>
 		</div>

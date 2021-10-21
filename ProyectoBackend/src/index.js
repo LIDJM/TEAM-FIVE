@@ -31,6 +31,7 @@ app.use('/api/productos', require('../routers/productos'));
 app.use('/api/categorias', require('../routers/categorias'));
 app.use('/api/unidades', require('../routers/unidades'));
 app.use('/api/ventas', require('../routers/ventasRouters'));
+app.use('/api/google', require('../routers/loginRouters'));
 
 /** Escuchar las peticiones */
 app.listen(Port, () => {

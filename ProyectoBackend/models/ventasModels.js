@@ -35,7 +35,8 @@ const ventaSchema = Schema({
 
     estado: {
         type: String,
-        default: "Realizado",
+        default: "Realizada",
+        values: ['Realizada', 'No Realizada', 'En Trámite' ],
         require: true
     }
 });

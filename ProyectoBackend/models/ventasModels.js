@@ -31,8 +31,13 @@ const ventaSchema = Schema({
         type: Date,
         default: Date.now,
         required: true
-    }
+    },
 
+    estado: {
+        type: String,
+        default: "Realizado",
+        require: true
+    }
 });
 
 module.exports = model('Ventas', ventaSchema);

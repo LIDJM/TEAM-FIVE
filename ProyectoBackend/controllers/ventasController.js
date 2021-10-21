@@ -24,9 +24,9 @@ const getVentas = async (req, resp = response) => {
 const setVentas = async (req, resp = response) => {
 
     const venta = new Ventas(req.body);
-    const id_producto = req.params.producto;
-    const id_cliente = req.params.cliente;
-    const id_vendedor = req.params.vendedor;
+    const id_producto = venta.producto._id;
+    const id_cliente = venta.cliente._id;
+    const id_vendedor = venta.vendedor._id;
     
     try {
         let producto = await Producto.findById(id_producto);
@@ -73,10 +73,11 @@ const setVentas = async (req, resp = response) => {
 };
 
 const actualizarVenta = async (req, resp = response) => {
+    const posibleVenta = new Ventas(req.body);
     const id = req.params.id;
-    const id_producto = req.params.producto;
-    const id_cliente = req.params.cliente;
-    const id_vendedor = req.params.vendedor;
+    const id_producto = posibleVenta.producto._id;
+    const id_cliente = posibleVenta.cliente._id;
+    const id_vendedor = posibleVenta.vendedor._id;
     
     try {
         let ventaActualizar = await Ventas.findById(id);
@@ -171,23 +172,31 @@ const eliminarVenta = async (req, resp = response) => {
 };
 
 const getVentasByProducto = async (req, resp = response) => {
-    const { producto } = req.body;
+    /*const { producto } = req.body;*/
+    
+    const producto_id = req.params.producto_id;
 
     try {
         let ventasByProducto = await Ventas
-            .find({ producto })
-            .populate('vendedor', '_id nombre')
-            .populate('cliente', 'nombre')
-            .populate('producto', 'codigo descripcion precio_venta unidad');
+        .find({
+            producto: producto_id, 
+        })
+        // let ventasByProducto = await Ventas
+        //     .find({ producto })
+        //     .populate('vendedor', '_id nombre')
+        //     .populate('cliente', 'nombre')
+        //     .populate('producto', 'codigo descripcion precio_venta unidad');
 
         if (!ventasByProducto) {
             return resp.status(400).json({
                 estatus: false,
                 msg: 'No existe ninguna venta con ese producto',
+                intendedProduct: producto_id,
             });
         }
         return resp.status(201).json({
             msg: 'Filtro de Ventas por producto',
+            prd_id: producto_id,
             ventasByProducto,
         });
     } catch (error) {
@@ -200,23 +209,24 @@ const getVentasByProducto = async (req, resp = response) => {
 };
 
 const getVentasByCliente = async (req, resp = response) => {
-    const { cliente } = req.body;
+    const cliente_id = req.params.cliente_id;
 
     try {
         let ventasByCliente = await Ventas
-            .find({ cliente })
-            .populate('vendedor', '_id nombre')
-            .populate('cliente', 'nombre')
-            .populate('producto', 'codigo descripcion precio_venta unidad');
-
+        .find({
+            cliente: cliente_id,
+        })
+    
         if (!ventasByCliente) {
             return resp.status(400).json({
                 estatus: false,
                 msg: 'No existe ninguna venta con ese cliente',
+                cliente_id: cliente_id,
             });
         }
         return resp.status(201).json({
             msg: 'Filtro de Ventas por cliente',
+            cliente_id: cliente_id,
             ventasByCliente,
         });
     } catch (error) {
@@ -224,6 +234,44 @@ const getVentasByCliente = async (req, resp = response) => {
         resp.status(500).json({
             estatus: false,
             msg: 'Error al filtrar venta por cliente',
+        });
+    }
+};
+
+const getVentasByVendedor = async (req, resp = response) => {
+    /*const { producto } = req.body;*/
+    
+    const vendedor_id = req.params.vendedor_id;
+
+    try {
+        let ventasByVendedor = await Ventas
+        .find({
+            vendedor: vendedor_id, 
+        })
+        // let ventasByProducto = await Ventas
+        //     .find({ producto })
+        //     .populate('vendedor', '_id nombre')
+        //     .populate('cliente', 'nombre')
+        //     .populate('producto', 'codigo descripcion precio_venta unidad');
+
+        if (!ventasByVendedor) {
+            return resp.status(400).json({
+                estatus: false,
+                msg: 'No existe ninguna venta con ese vendedor',
+                intendedVendor: vendedor_id,
+            });
+        };
+        
+        return resp.status(201).json({
+            msg: 'Filtro de Ventas por vendedor',
+            vendor_id: vendedor_id,
+            ventasByVendedor,
+        });
+    } catch (error) {
+        console.log(error);
+        resp.status(500).json({
+            estatus: false,
+            msg: 'Error al filtrar venta por Vendedor',
         });
     }
 };
@@ -236,6 +284,7 @@ const getVentasByID = async (req, resp = response) => {
             return resp.status(400).json({
                 estatus: false,
                 msg: 'No existe ninguna venta con ese ID',
+                vid: id,
             });
         }
 
@@ -247,7 +296,7 @@ const getVentasByID = async (req, resp = response) => {
         console.log(error);
         resp.status(500).json({
             estatus: false,
-            msg: 'Error al filtrar venta',
+            msg: 'Error al filtrar venta por ID',
         });
     }
 };
@@ -260,5 +309,6 @@ module.exports = {
     eliminarVenta,
     getVentasByProducto,
     getVentasByCliente,
+    getVentasByVendedor,
     getVentasByID
 }

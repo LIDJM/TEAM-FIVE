@@ -8,6 +8,7 @@ const {getVentas,
     eliminarVenta, 
     getVentasByProducto,
     getVentasByCliente,
+    getVentasByVendedor,
     getVentasByID } = require('../controllers/ventasController');
 
 router.get('/listar', getVentas);
@@ -21,6 +22,8 @@ router.delete('/eliminar/:id', eliminarVenta);
 router.get('/filtroVentaProducto/:producto_id', getVentasByProducto);
 
 router.get('/filtroVentaCliente/:cliente_id', getVentasByCliente);
+
+router.get('/filtroVentaVendedor/:vendedor_id', getVentasByVendedor);
 
 router.get('/filtroVentaId/:id', getVentasByID);
 

@@ -13,11 +13,11 @@ const registroUsuarios = () => {
 		console.log(datos);
 		const setEstado = (estado) => {
 			if (estado === 'autorizado') {
-				return '617095431c27074d27d530e9';
+				return '6170e5b58bf6eda3e5ac6bc9';
 			} else if (estado === 'pendiente') {
-				return '6170957b1c27074d27d530ea';
+				return '6170e65fdb034b5294554d01';
 			} else {
-				return '617095991c27074d27d530eb';
+				return '6170e673db034b5294554d04';
 			}
 		};
 

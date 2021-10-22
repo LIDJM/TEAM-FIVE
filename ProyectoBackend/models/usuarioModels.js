@@ -23,8 +23,7 @@ const UsuarioSchema = Schema({
 	},
 	estado: {
 		type: Schema.Types.ObjectId,
-		ref: 'Estado',
-		default: 'pendiente',
+		ref: 'estado',
 	},
 });
 

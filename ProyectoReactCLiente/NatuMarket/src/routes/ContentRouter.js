@@ -4,7 +4,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import home from '../components/pages/home';
 import Productos from '../components/pages/Productos';
 import Usuarios from '../components/pages/Usuarios';
-import ventas from '../components/pages/ventas';
+import Ventas from '../components/pages/Ventas';
 import registroUsuarios from '../components/pages/registroUsuarios';
 import registroProductos from '../components/pages/registroProductos';
 import registroVentas from '../components/pages/registroVentas';
@@ -15,9 +15,10 @@ const ContentRouter = () => {
 			<SideBar />
 			<Switch>
 				<Route path='/' exact component={home} />
+
 				<Route path='/productos' exact component={Productos} />
 				<Route path='/Usuarios' exact component={Usuarios} />
-				<Route path='/ventas' exact component={ventas} />
+				<Route path='/ventas' exact component={Ventas} />
 				<Route
 					path='/registroUsuarios'
 					exact

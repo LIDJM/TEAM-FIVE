@@ -16,7 +16,7 @@ const Usuarios = () => {
 	}, []);
 
 	const setEstado = (estado) => {
-		if (estado === '617095431c27074d27d530e9') {
+		if (estado === 'autorizado') {
 			return (
 				<td>
 					<span class='status text-success'>&bull;</span>
@@ -30,7 +30,7 @@ const Usuarios = () => {
 					Pendiente
 				</td>
 			);
-		} else if (estado === '617095991c27074d27d530eb') {
+		} else if (estado === 'no autorizado') {
 			return (
 				<td>
 					<span class='status text-danger'>&bull;</span>
@@ -89,15 +89,8 @@ const Usuarios = () => {
 											<td>{usuario.nombre}</td>
 											<td>{usuario.email}</td>
 											<td>{usuario.rol}</td>
-											{setEstado(usuario.estado)}
+											{setEstado(usuario.estado.nombre)}
 											<td>
-												<a
-													href='#'
-													className='view'
-													title='View'
-													data-toggle='tooltip'>
-													<i className='material-icons'>&#xE417;</i>
-												</a>
 												<a
 													href='#'
 													className='edit'

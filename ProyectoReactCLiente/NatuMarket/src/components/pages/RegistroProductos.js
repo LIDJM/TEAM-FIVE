@@ -1,6 +1,6 @@
 import React from 'react';
 
-const registroProductos = () => {
+const RegistroProductos = () => {
 	return (
 		<div className='formulario'>
 			<form action='' class='form-registro'>
@@ -99,4 +99,4 @@ const registroProductos = () => {
 	);
 };
 
-export default registroProductos;
+export default RegistroProductos;

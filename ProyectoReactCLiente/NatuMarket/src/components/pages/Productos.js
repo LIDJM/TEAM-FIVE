@@ -3,7 +3,7 @@ import Tabla from '../Tabla/tabla';
 import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
 import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
 
-const productos = () => {
+const Productos = () => {
 	const setEstado = (estado) => {
 		if (estado === 'Disponible') {
 			return (
@@ -114,7 +114,7 @@ const productos = () => {
 	);
 };
 
-export default productos;
+export default Productos;
 
 // import React from 'react';
 // import Tabla from '../components/Tabla';

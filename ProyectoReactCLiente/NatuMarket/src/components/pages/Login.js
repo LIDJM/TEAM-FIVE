@@ -2,20 +2,47 @@ import React from 'react';
 import {useForm} from 'react-hook-form';
 import {GoogleLogin} from 'react-google-login';
 import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
+import notie from 'notie';
+import 'notie/dist/notie.css';
+import '../../index.css';
 
-const Login = () => {
+export const Login = () => {
+	const auth = useAuth();
+
 	const responseGoogle = async (respuesta) => {
 		console.log(respuesta);
 		try {
-			const resp = await axios({
+			const {status, data} = await axios({
 				method: 'POST',
 				url: 'http://localhost:4001/api/google/login',
 				headers: {
 					Authorization: `Bearer ${respuesta.tokenId}`,
 				},
 			});
-			console.log(resp);
-		} catch (error) {}
+			console.log('status', status);
+
+			if (status === 200) {
+				auth.setToken(data.token);
+				auth.setUser({uid: data.uid, name: data.name});
+			} else if (status === 201) {
+				notie.alert({text: data.msg, type: 'success', time: 10});
+			}
+		} catch (error) {
+			// if (error.response.status === 401) {
+			// 	notie.alert({
+			// 		text: error.response.data.msg,
+			// 		type: 'warning',
+			// 		time: 10,
+			// 	});
+			// } else {
+			// 	notie.alert({
+			// 		text: error.response.data.msg,
+			// 		type: 'error',
+			// 		time: 10,
+			// 	});
+			// }
+		}
 	};
 
 	const {
@@ -60,7 +87,7 @@ const Login = () => {
 						<div className='col-md-12'>
 							<GoogleLogin
 								clientId='552058111179-58af81em76valb4mecmb1229ru2oekoe.apps.googleusercontent.com'
-								buttonText='PEPE'
+								buttonText='Login'
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}
 								cookiePolicy={'single_host_origin'}
@@ -72,5 +99,3 @@ const Login = () => {
 		</div>
 	);
 };
-
-export default Login;

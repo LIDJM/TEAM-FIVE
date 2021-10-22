@@ -1,7 +1,7 @@
 import React from 'react';
 // import Tabla from '../components/Tabla';
 
-const ventas = () => {
+const Ventas = () => {
 	return (
 		<div className='ventas'>
 			<h1>Ventas</h1>
@@ -9,4 +9,4 @@ const ventas = () => {
 	);
 };
 
-export default ventas;
+export default Ventas;

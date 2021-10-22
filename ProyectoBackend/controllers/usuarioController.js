@@ -1,6 +1,7 @@
 //esto es para activar las ayudas
 const {response} = require('express');
 const Usuario = require('../models/usuarioModels');
+const Estado = require('../models/estadoUsuarioModel');
 
 const getUsuarios = async (req, resp = response) => {
 	const usuarios = await Usuario.find().populate('estado');

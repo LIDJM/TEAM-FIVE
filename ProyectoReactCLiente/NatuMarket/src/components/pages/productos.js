@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
 import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
+import axios from 'axios';
 
-const productos = () => {
+const Productos = () => {
+	const [productos, setProductos] = useState([]);
+
+	useEffect(async () => {
+		let response = await axios.get(
+			'http://localhost:4001/api/productos/listar'
+		);
+		console.log(response.data);
+		setProductos(response.data);
+	}, []);
+
 	const setEstado = (estado) => {
 		if (estado === 'Disponible') {
 			return (
@@ -34,7 +45,7 @@ const productos = () => {
 										href='/registroProductos'
 										class='btn btn-primary'>
 										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar Producto</span>
+										<span>Ingresar nuevo Producto</span>
 									</a>
 								</div>
 							</th>
@@ -67,18 +78,18 @@ const productos = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{DatosCuerpoProductos.map((item, index) => {
+								{productos.map((producto) => {
 									return (
-										<tr key={index}>
-											<td>{item.categoria}</td>
-											<td>{item.codigo}</td>
-											<td>{item.descripcion}</td>
-											<td>{item.imagen}</td>
-											<td>{item.stock}</td>
-											<td>{item.precio_compra}</td>
-											<td>{item.precio_venta}</td>
-											<td>{item.unidad_medida}</td>
-											{setEstado(item.estado)}
+										<tr>
+											<td>{producto.categoria.nombre}</td>
+											<td>{producto.codigo}</td>
+											<td>{producto.descripcion}</td>
+											<td>{producto.imagen}</td>
+											<td>{producto.stock}</td>
+											<td>{producto.precio_compra}</td>
+											<td>{producto.precio_venta}</td>
+											<td>{producto.unidad.nombre}</td>
+											{setEstado(producto.estado)}
 											<td>
 												<a
 													href='#'
@@ -114,7 +125,7 @@ const productos = () => {
 	);
 };
 
-export default productos;
+export default Productos;
 
 // import React from 'react';
 // import Tabla from '../components/Tabla';

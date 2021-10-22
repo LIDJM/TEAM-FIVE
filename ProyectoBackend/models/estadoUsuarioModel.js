@@ -7,4 +7,4 @@ const EstadoUsuarioSchema = Schema({
 	},
 });
 
-module.exports = model('Estado', EstadoUsuarioSchema);
+module.exports = model('estado', EstadoUsuarioSchema);

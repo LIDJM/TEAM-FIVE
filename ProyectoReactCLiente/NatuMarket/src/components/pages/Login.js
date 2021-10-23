@@ -11,7 +11,7 @@ export const Login = () => {
 	const auth = useAuth();
 
 	const responseGoogle = async (respuesta) => {
-		console.log(respuesta);
+		//console.log(respuesta);
 		try {
 			const {status, data} = await axios({
 				method: 'POST',
@@ -21,6 +21,7 @@ export const Login = () => {
 				},
 			});
 			console.log('status', status);
+			console.log('data', data);
 
 			if (status === 200) {
 				auth.setToken(data.token);
@@ -86,7 +87,7 @@ export const Login = () => {
 					<div className='row'>
 						<div className='col-md-12'>
 							<GoogleLogin
-								clientId='552058111179-58af81em76valb4mecmb1229ru2oekoe.apps.googleusercontent.com'
+								clientId='552058111179-gqr5bk17o5oqd5d358r72pbhkr8fl278.apps.googleusercontent.com'
 								buttonText='Login'
 								onSuccess={responseGoogle}
 								onFailure={responseGoogle}

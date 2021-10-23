@@ -15,7 +15,6 @@ const ContentRouter = () => {
 			<SideBar />
 			<Switch>
 				<Route path='/' exact component={home} />
-
 				<Route path='/productos' exact component={Productos} />
 				<Route path='/Usuarios' exact component={Usuarios} />
 				<Route path='/ventas' exact component={Ventas} />

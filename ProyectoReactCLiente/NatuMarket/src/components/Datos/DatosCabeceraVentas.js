@@ -12,14 +12,14 @@ const DatosCabeceraVentas = [
 		nombre: 'Producto',
 	},
 	{
-		nombre: 'Cantidad',
-	},
-	{
 		nombre: 'U.M.',
 	},
-    {
+	{
         nombre: 'Precio Unitario', 
     },
+	{
+		nombre: 'Cantidad',
+	},
 	{
 		nombre: 'Precio Venta Total',
 	},
@@ -29,7 +29,6 @@ const DatosCabeceraVentas = [
 	{
 		nombre: 'Fecha',
 	},
-	
     {
 		nombre: 'Registro Único',
 	},

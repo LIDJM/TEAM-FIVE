@@ -122,8 +122,8 @@ const Ventas = () => {
 											<td>{venta.cliente.nombre}</td>
 											<td>{venta.producto.codigo}</td>
 											<td>{venta.producto.descripcion}</td>
-											<td>{venta.producto.precio_venta}</td>
 											{setUnidadProducto(venta.producto.unidad)}
+											<td>{venta.producto.precio_venta}</td>
 											{/* <td>{venta.producto.unidad}</td> */}
 											<td>{venta.cantidad}</td>
 											{setVentasTotal(venta.producto.precio_venta, venta.cantidad)}

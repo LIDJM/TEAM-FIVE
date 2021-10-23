@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const ventaSchema = Schema({
+const VentaSchema = Schema({
 
     vendedor: {
         type: Schema.Types.ObjectId,
@@ -15,6 +15,7 @@ const ventaSchema = Schema({
     producto: {
         type: Schema.Types.ObjectId,
         ref: 'Producto',
+        
     },
 
     cantidad: {
@@ -31,8 +32,17 @@ const ventaSchema = Schema({
         type: Date,
         default: Date.now,
         required: true
-    }
+    },
 
+    estado: {
+        type: String,
+        default: "Realizada",
+        values: ['Realizada', 'No Realizada', 'En Trámite' ],
+        require: true
+    }
+},
+{
+    collection: 'ventas',
 });
 
-module.exports = model('Ventas', ventaSchema);
+module.exports = model('Venta', VentaSchema);

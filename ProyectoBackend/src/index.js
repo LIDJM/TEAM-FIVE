@@ -4,7 +4,7 @@ const express = require('express');
 // añadimos la configuracion de la variable de entorno
 require('dotenv').config();
 const {dbConnection} = require('../database/config');
-//const cors = require('cors');
+const cors = require('cors');
 
 const Port = process.env.Port;
 
@@ -15,7 +15,7 @@ const app = express();
 dbConnection();
 
 /**Utilizar CORS */
-//app.use(cors());
+app.use(cors());
 
 /**Directorio publico */
 /** el use es un middleware: funcion que se ejecuta siempre que  alguien hace una peticion a mi servidor*/

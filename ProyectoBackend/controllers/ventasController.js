@@ -1,5 +1,5 @@
 const { response } = require('express');
-const Ventas = require('../models/ventasModels');
+const Venta = require('../models/ventasModels');
 const Rol = require('../models/rolModels');
 const Cliente = require('../models/clienteModels');
 const Producto = require('../models/Producto');
@@ -8,22 +8,20 @@ const Unidad = require('../models/UnidadModel');
 
 const getVentas = async (req, resp = response) => {
 
-    const ventas = await Ventas
+    const ventas = await Venta
         .find()
         .populate('vendedor', '_id nombre')
         .populate('cliente', 'nombre')
         .populate('producto', 'codigo descripcion precio_venta unidad');
 
-    resp.json({
-        ok: true,
-        msg: 'listar ventas',
-        ventas,
-    });
+    resp.json(  
+        ventas
+    );
 };
 
 const setVentas = async (req, resp = response) => {
 
-    const venta = new Ventas(req.body);
+    const venta = new Venta(req.body);
     const id_producto = venta.producto._id;
     const id_cliente = venta.cliente._id;
     const id_vendedor = venta.vendedor._id;
@@ -73,14 +71,14 @@ const setVentas = async (req, resp = response) => {
 };
 
 const actualizarVenta = async (req, resp = response) => {
-    const posibleVenta = new Ventas(req.body);
+    const posibleVenta = new Venta(req.body);
     const id = req.params.id;
     const id_producto = posibleVenta.producto._id;
     const id_cliente = posibleVenta.cliente._id;
     const id_vendedor = posibleVenta.vendedor._id;
     
     try {
-        let ventaActualizar = await Ventas.findById(id);
+        let ventaActualizar = await Venta.findById(id);
         if (!ventaActualizar) {
             return resp.status(400).json({
                 estatus: false,
@@ -129,7 +127,7 @@ const actualizarVenta = async (req, resp = response) => {
             estado,
         };
 
-        await Ventas.findByIdAndUpdate(id, ventaActualizar);
+        await Venta.findByIdAndUpdate(id, ventaActualizar);
 
         return resp.status(201).json({
             msg: 'venta actualizada',
@@ -149,7 +147,7 @@ const eliminarVenta = async (req, resp = response) => {
     const id = req.params.id;
 
     try {
-        let VentaEliminar = await Ventas.findById(id);
+        let VentaEliminar = await Venta.findById(id);
 
         if (!VentaEliminar) {
             return resp.status(400).json({
@@ -158,7 +156,7 @@ const eliminarVenta = async (req, resp = response) => {
             });
         }
 
-        await Ventas.findByIdAndDelete(id);
+        await Venta.findByIdAndDelete(id);
         return resp.status(201).json({
             msg: 'Venta Eliminada',
         });
@@ -177,7 +175,7 @@ const getVentasByProducto = async (req, resp = response) => {
     const producto_id = req.params.producto_id;
 
     try {
-        let ventasByProducto = await Ventas
+        let ventasByProducto = await Venta
         .find({
             producto: producto_id, 
         })
@@ -212,7 +210,7 @@ const getVentasByCliente = async (req, resp = response) => {
     const cliente_id = req.params.cliente_id;
 
     try {
-        let ventasByCliente = await Ventas
+        let ventasByCliente = await Venta
         .find({
             cliente: cliente_id,
         })
@@ -244,7 +242,7 @@ const getVentasByVendedor = async (req, resp = response) => {
     const vendedor_id = req.params.vendedor_id;
 
     try {
-        let ventasByVendedor = await Ventas
+        let ventasByVendedor = await Venta
         .find({
             vendedor: vendedor_id, 
         })
@@ -279,7 +277,7 @@ const getVentasByVendedor = async (req, resp = response) => {
 const getVentasByID = async (req, resp = response) => {
     const id = req.params.id;
     try {
-        let ventaByID = await Ventas.findById(id);
+        let ventaByID = await Venta.findById(id);
         if (!ventaByID) {
             return resp.status(400).json({
                 estatus: false,

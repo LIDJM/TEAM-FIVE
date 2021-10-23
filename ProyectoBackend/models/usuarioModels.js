@@ -19,12 +19,15 @@ const UsuarioSchema = Schema({
 	},
 	rol: {
 		type: String,
-		required: true,
+		default: 'no asignado',
 	},
 	estado: {
 		type: Schema.Types.ObjectId,
 		ref: 'estado',
 		default: '6170e65fdb034b5294554d01',
+	},
+	idToken: {
+		type: String,
 	},
 });
 

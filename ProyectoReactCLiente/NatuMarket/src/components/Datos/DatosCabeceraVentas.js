@@ -6,16 +6,25 @@ const DatosCabeceraVentas = [
 		nombre: 'Cliente',
 	},
 	{
+		nombre: 'ID Producto',
+	},
+	{
 		nombre: 'Producto',
 	},
 	{
-		nombre: 'Cantidad',
+		nombre: 'U.M.',
 	},
-    {
+	{
         nombre: 'Precio Unitario', 
     },
 	{
+		nombre: 'Cantidad',
+	},
+	{
 		nombre: 'Precio Venta Total',
+	},
+	{
+		nombre: 'Estado',
 	},
 	{
 		nombre: 'Fecha',

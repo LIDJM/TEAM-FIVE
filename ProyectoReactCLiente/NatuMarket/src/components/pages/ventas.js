@@ -1,13 +1,75 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraVentas from '../Datos/DatosCabeceraVentas';
-import DatosCuerpoVentas from '../Datos/DatosCuerpoVentas';
+import axios from 'axios';
 
-const ventas = () => {
+const Ventas = () => {
+	const [ventas, setVentas] = useState([]);
+
+	useEffect(async () => {
+		let response = await axios.get(
+			'http://localhost:4001/api/ventas/listar'
+		);
+		console.log(response.data);
+		setVentas(response.data);
+	}, []);
+
+	const setEstado = (estado) => {
+		if (estado === 'Realizada') {
+			return (
+				<td>
+					<span class='status text-success'>&bull;</span>
+					Realizada
+				</td>
+			);
+		} else if (estado === 'En Trámite') {
+			return (
+				<td>
+					<span class='status text-warning'>&bull;</span>
+					En Trámite
+				</td>
+			);
+		} else if (estado === 'No Realizada') {
+			return (
+				<td>
+					<span class='status text-danger'>&bull;</span>
+					No Realizada
+				</td>
+			);
+		}
+	};
 
 	const setVentasTotal = (valor_unitario, cantidad) => {
-		const vt = valor_unitario * cantidad;
-		return vt;
+        const vt = valor_unitario * cantidad;
+        return vt;
+    };
+
+	const setUnidadProducto = (unidad) =>{
+		if (unidad === '6165cb30255654c1a93c1073') {
+			return (
+				<td>
+					{/* <span class='status text-success'>&bull;</span> */}
+					kg
+				</td>
+			);
+		// } else if (estado === 'En Trámite') {
+		// 	return (
+		// 		<td>
+		// 			<span class='status text-warning'>&bull;</span>
+		// 			En Trámite
+		// 		</td>
+		// 	);
+		// } else if (estado === 'No Realizada') {
+		// 	return (
+		// 		<td>
+		// 			<span class='status text-danger'>&bull;</span>
+		// 			No Realizada
+		// 		</td>
+		// 	);
+		// }
+	};
+
 	}
 
 	return (
@@ -20,7 +82,7 @@ const ventas = () => {
 								<div class='col-sm-7'>
 									<a href='/registroVentas' class='btn btn-primary'>
 										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar Venta</span>
+										<span>Ingresar nueva Venta</span>
 									</a>
 								</div>
 							</th>
@@ -53,56 +115,47 @@ const ventas = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{DatosCuerpoVentas.map((item, index) => {
+								{ventas.map((venta) => {
 									return (
-										<tr key={index}>
-											<td> {item.vendedor} </td>
-											<td> {item.cliente} </td>
-											<td> {item.producto} </td>
-											<td> {item.cantidad} </td>
-											<td> {item.precio_unitario} </td>
-											{setVentasTotal(item.precio_unitario, item.cantidad)}
-											<td> {item.fecha} </td>
-											<td> {item.id} </td>
+										<tr>
+											<td>{venta.vendedor.nombre}</td>
+											<td>{venta.cliente.nombre}</td>
+											<td>{venta.producto.codigo}</td>
+											<td>{venta.producto.descripcion}</td>
+											{setUnidadProducto(venta.producto.unidad)}
+											<td>{venta.producto.precio_venta}</td>
+											{/* <td>{venta.producto.unidad}</td> */}
+											<td>{venta.cantidad}</td>
+											{setVentasTotal(venta.producto.precio_venta, venta.cantidad)}
+											{setEstado(venta.estado)}
+											<td>{venta.fecha}</td>
+											<td>{venta._id}</td>
 											<td>
 												<a
 													href='#'
-													class='view'
-													title='View'
-													data-toggle='tooltip'
-												>
-													<i class='material-icons'>&#xE417;</i>
-												</a>
-												<a
-													href='#'
-													class='edit'
+													className='edit'
 													title='Edit'
-													data-toggle='tooltip'
-												>
-													<i class='material-icons'>&#xE254;</i>
+													data-toggle='tooltip'>
+													<i className='material-icons'>&#xE254;</i>
 												</a>
 												<a
 													href='#'
-													class='delete'
+													className='delete'
 													title='Delete'
-													data-toggle='tooltip'
-												>
-													<i class='material-icons'>&#xE872;</i>
+													data-toggle='tooltip'>
+													<i className='material-icons'>&#xE872;</i>
 												</a>
-											</td>
+												</td>
 										</tr>
-									)
+									);
 								})}
 							</tbody>
-
 						</table>
 					}
-				>
-
-				</Tabla>
+				/>
 			</div>
 		</>
 	);
 };
 
-export default ventas;
+export default Ventas;

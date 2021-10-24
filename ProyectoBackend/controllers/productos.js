@@ -3,13 +3,9 @@ const Producto = require('../models/Producto')
 
 
 const getProductos = async (req, resp = response) => {
-    const products = await Producto.find();
+    const productos = await Producto.find().populate('categoria').populate('unidad');
     
-    resp.json({
-        ok: true,
-        msg: 'Listar Productos',
-        products
-    });
+    resp.json(productos);
 };
 
 const setProducto = async (req, resp = response) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraVentas from '../Datos/DatosCabeceraVentas';
 import axios from 'axios';
@@ -41,11 +41,11 @@ const Ventas = () => {
 	};
 
 	const setVentasTotal = (valor_unitario, cantidad) => {
-        const vt = valor_unitario * cantidad;
-        return vt;
-    };
+		const vt = valor_unitario * cantidad;
+		return vt;
+	};
 
-	const setUnidadProducto = (unidad) =>{
+	const setUnidadProducto = (unidad) => {
 		if (unidad === '6165cb30255654c1a93c1073') {
 			return (
 				<td>
@@ -53,29 +53,25 @@ const Ventas = () => {
 					kg
 				</td>
 			);
-		// } else if (estado === 'En Trámite') {
-		// 	return (
-		// 		<td>
-		// 			<span class='status text-warning'>&bull;</span>
-		// 			En Trámite
-		// 		</td>
-		// 	);
-		// } else if (estado === 'No Realizada') {
-		// 	return (
-		// 		<td>
-		// 			<span class='status text-danger'>&bull;</span>
-		// 			No Realizada
-		// 		</td>
-		// 	);
-		// }
+			// } else if (estado === 'En Trámite') {
+			// 	return (
+			// 		<td>
+			// 			<span class='status text-warning'>&bull;</span>
+			// 			En Trámite
+			// 		</td>
+			// 	);
+			// } else if (estado === 'No Realizada') {
+			// 	return (
+			// 		<td>
+			// 			<span class='status text-danger'>&bull;</span>
+			// 			No Realizada
+			// 		</td>
+			// 	);
+			// }
+		};
+
 	};
 
-	}
-
-<<<<<<< HEAD:ProyectoReactCLiente/NatuMarket/src/components/pages/ventas.js
-=======
-const Ventas = () => {
->>>>>>> 5fe3d70 (Adelanto integracion # 5):ProyectoReactCLiente/NatuMarket/src/components/pages/Ventas.js
 	return (
 		<>
 			<div className='page_content'>
@@ -149,7 +145,7 @@ const Ventas = () => {
 													data-toggle='tooltip'>
 													<i className='material-icons'>&#xE872;</i>
 												</a>
-												</td>
+											</td>
 										</tr>
 									);
 								})}

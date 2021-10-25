@@ -72,6 +72,10 @@ const Ventas = () => {
 
 	}
 
+<<<<<<< HEAD:ProyectoReactCLiente/NatuMarket/src/components/pages/ventas.js
+=======
+const Ventas = () => {
+>>>>>>> 5fe3d70 (Adelanto integracion # 5):ProyectoReactCLiente/NatuMarket/src/components/pages/Ventas.js
 	return (
 		<>
 			<div className='page_content'>

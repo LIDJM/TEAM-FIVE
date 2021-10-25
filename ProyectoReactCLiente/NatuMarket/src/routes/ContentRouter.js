@@ -19,13 +19,13 @@ const ContentRouter = () => {
 				<Route path='/Usuarios' exact component={Usuarios} />
 				<Route path='/ventas' exact component={Ventas} />
 				<Route
-					path='/registroUsuarios'
 					exact
+					path='/registroUsuarios'
 					component={RegistroUsuarios}
 				/>
 				<Route
-					path='/registroProductos'
 					exact
+					path='/registroProductos'
 					component={RegistroProductos}
 				/>
 				<Route

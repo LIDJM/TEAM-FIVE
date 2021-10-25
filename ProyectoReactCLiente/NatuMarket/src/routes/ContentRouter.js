@@ -1,32 +1,31 @@
 import React from 'react';
 import SideBar from '../components/Menu/SideBar';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import home from '../components/pages/home';
+import Home from '../components/pages/Home';
 import Productos from '../components/pages/Productos';
 import Usuarios from '../components/pages/Usuarios';
 import Ventas from '../components/pages/Ventas';
-import registroUsuarios from '../components/pages/registroUsuarios';
-import registroProductos from '../components/pages/registroProductos';
-import registroVentas from '../components/pages/registroVentas';
+import RegistroUsuarios from '../components/pages/RegistroUsuarios';
+import RegistroProductos from '../components/pages/RegistroProductos';
 
 const ContentRouter = () => {
 	return (
 		<>
 			<SideBar />
 			<Switch>
-				<Route path='/' exact component={home} />
-				<Route path='/productos' exact component={Productos} />
-				<Route path='/Usuarios' exact component={Usuarios} />
-				<Route path='/ventas' exact component={Ventas} />
+				<Route exact path='/' component={Home} />
+				<Route exact path='/productos' component={Productos} />
+				<Route exact path='/Usuarios' component={Usuarios} />
+				<Route exact path='/ventas' component={Ventas} />
 				<Route
-					path='/registroUsuarios'
 					exact
-					component={registroUsuarios}
+					path='/registroUsuarios'
+					component={RegistroUsuarios}
 				/>
 				<Route
-					path='/registroProductos'
 					exact
-					component={registroProductos}
+					path='/registroProductos'
+					component={RegistroProductos}
 				/>
 				<Route
 					path='/registroVentas'

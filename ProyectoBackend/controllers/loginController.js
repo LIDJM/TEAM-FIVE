@@ -4,6 +4,9 @@ const {generarJWT} = require('../helpers/jwt');
 
 const googleLogin = async (req, resp = response) => {
 	const {uid: idToken, name, email} = req;
+	console.log(name);
+	console.log(email);
+	console.log(idToken);
 
 	try {
 		//** .populate trae los datos de esa llave */
@@ -11,30 +14,32 @@ const googleLogin = async (req, resp = response) => {
 			email,
 			idToken,
 		}).populate('estado');
-
+		console.log(usuario);
 		if (usuario) {
-			if (usuario.rol.name === 'pendiente') {
-				resp.status(401).json({
-					ok: false,
-					msg: 'Usuario no autorizado por el admin',
-				});
-			} else {
-				const token = await generarJWT(usuario.id, usuario.name);
+			if (usuario.estado.nombre === 'autorizado') {
+				const token = await generarJWT(usuario.id, usuario.nombre);
 				resp.json({
 					ok: true,
 					msg: 'Ok',
 					uid: usuario.id,
-					name: usuario.name,
+					name: usuario.nombre,
 					token,
+				});
+				console.log(token);
+			} else {
+				resp.status(401).json({
+					ok: false,
+					msg: 'Usuario no autorizado por el admin',
 				});
 			}
 		} else {
 			usuario = new Usuario({
-				name,
+				nombre: name,
 				email,
 				password: idToken,
 				idToken,
 			});
+			console.log(usuario);
 
 			const newUser = await usuario.save();
 			resp.status(201).json({

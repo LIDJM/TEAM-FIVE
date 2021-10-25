@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import axios from 'axios';
-const home = () => {
+const Home = () => {
 	const responseGoogle = (resp) => {
 		console.log(resp);
 	};
@@ -12,4 +12,4 @@ const home = () => {
 	);
 };
 
-export default home;
+export default Home;

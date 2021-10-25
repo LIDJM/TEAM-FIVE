@@ -3,11 +3,11 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 
-const registroProductos = () => {
+const RegistroProductos = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: {errors},
+		formState: { errors },
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 	} = useForm();
 	const onSubmit = async (datos) => {
@@ -21,11 +21,13 @@ const registroProductos = () => {
 				return '6175fb52a711dcf029fa65bb';
 			} else if (categoria === 'Productos lacteos') {
 				return '6175fb6ca711dcf029fa65bc';
+			} else if (categoria === 'Bebidas') {
+				return '6176159ea711dcf029fa65c9';
 			} else {
 				return '6175fb87a711dcf029fa65bd';
 			}
 		};
-		
+
 		const setUnidad = (unidad) => {
 			if (unidad === '500 gr') {
 				return '6175fed0a711dcf029fa65c2';
@@ -37,7 +39,7 @@ const registroProductos = () => {
 				return '6175fef5a711dcf029fa65c4';
 			}
 		};
-		
+
 
 		const respuesta = await axios.post(
 			'http://localhost:4001/api/productos/crear',
@@ -66,6 +68,7 @@ const registroProductos = () => {
 						<div class='row'>
 							<div class='col-md-6'>
 								<select {...register('categoria', {})}>
+									<option value='Bebidas'>Bebidas</option>
 									<option value='Granos'>Granos</option>
 									<option value='Verduras'>Verduras</option>
 									<option value='Frutas'>Frutas</option>
@@ -159,4 +162,4 @@ const registroProductos = () => {
 	);
 };
 
-export default registroProductos;
+export default RegistroProductos;

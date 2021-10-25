@@ -6,7 +6,7 @@ import Productos from '../components/pages/Productos';
 import Usuarios from '../components/pages/Usuarios';
 import Ventas from '../components/pages/Ventas';
 import registroUsuarios from '../components/pages/registroUsuarios';
-import registroProductos from '../components/pages/registroProductos';
+import RegistroProductos from '../components/pages/RegistroProductos';
 import registroVentas from '../components/pages/registroVentas';
 
 const ContentRouter = () => {
@@ -26,7 +26,7 @@ const ContentRouter = () => {
 				<Route
 					path='/registroProductos'
 					exact
-					component={registroProductos}
+					component={RegistroProductos}
 				/>
 				<Route
 					path='/registroVentas'

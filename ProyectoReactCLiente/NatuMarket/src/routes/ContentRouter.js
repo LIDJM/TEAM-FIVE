@@ -1,27 +1,27 @@
 import React from 'react';
 import SideBar from '../components/Menu/SideBar';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import home from '../components/pages/home';
+import Home from '../components/pages/Home';
 import Productos from '../components/pages/Productos';
 import Usuarios from '../components/pages/Usuarios';
 import Ventas from '../components/pages/Ventas';
-import registroUsuarios from '../components/pages/registroUsuarios';
+import RegistroUsuarios from '../components/pages/RegistroUsuarios';
 import RegistroProductos from '../components/pages/RegistroProductos';
-import registroVentas from '../components/pages/registroVentas';
+import RegistroVentas from '../components/pages/RegistroVentas';
 
 const ContentRouter = () => {
 	return (
 		<>
 			<SideBar />
 			<Switch>
-				<Route path='/' exact component={home} />
+				<Route path='/' exact component={Home} />
 				<Route path='/productos' exact component={Productos} />
 				<Route path='/Usuarios' exact component={Usuarios} />
 				<Route path='/ventas' exact component={Ventas} />
 				<Route
 					path='/registroUsuarios'
 					exact
-					component={registroUsuarios}
+					component={RegistroUsuarios}
 				/>
 				<Route
 					path='/registroProductos'
@@ -31,7 +31,7 @@ const ContentRouter = () => {
 				<Route
 					path='/registroVentas'
 					exact
-					component={registroVentas}
+					component={RegistroVentas}
 				/>
 				<Redirect to='/' />
 			</Switch>

@@ -126,14 +126,14 @@ span {
 .btn-primary :active {
 	background-color: #f09c81;
 }
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
 	#root {
 		grid-template:
 			'navbar navbar' 80px
 			'sidebar main' auto/
 			240px auto;
 	}
-}
+} */
 .formulario {
 	background-color: #f09c81;
 	padding: 20px;

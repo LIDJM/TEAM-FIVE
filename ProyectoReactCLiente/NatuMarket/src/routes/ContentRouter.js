@@ -7,6 +7,8 @@ import Usuarios from '../components/pages/Usuarios';
 import Ventas from '../components/pages/Ventas';
 import RegistroUsuarios from '../components/pages/RegistroUsuarios';
 import RegistroProductos from '../components/pages/RegistroProductos';
+import RegistroVentas from '../components/pages/RegistroVentas';
+
 
 const ContentRouter = () => {
 	return (
@@ -30,7 +32,7 @@ const ContentRouter = () => {
 				<Route
 					path='/registroVentas'
 					exact
-					component={registroVentas}
+					component={RegistroVentas}
 				/>
 				<Redirect to='/' />
 			</Switch>

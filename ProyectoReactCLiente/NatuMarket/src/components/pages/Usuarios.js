@@ -92,7 +92,7 @@ const Usuarios = () => {
 											{setEstado(usuario.estado.nombre)}
 											<td>
 												<a
-													href='#'
+													href='/CambiosUsuarios'
 													className='edit'
 													title='Edit'
 													data-toggle='tooltip'>

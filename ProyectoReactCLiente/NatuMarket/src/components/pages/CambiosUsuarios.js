@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 
-const RegistroUsuarios = () => {
+const CambiosUsuarios = () => {
 	const {
 		register,
 		handleSubmit,
@@ -105,4 +105,4 @@ const RegistroUsuarios = () => {
 		</div>
 	);
 };
-export default RegistroUsuarios;
+export default CambiosUsuarios;

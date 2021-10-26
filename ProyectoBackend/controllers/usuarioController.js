@@ -1,6 +1,9 @@
 //esto es para activar las ayudas
 const {response} = require('express');
 const Usuario = require('../models/usuarioModels');
+const Rol = require('../models/rolModels');
+const Cliente = require('../models/clienteModels');
+const Producto = require('../models/Producto');
 const Estado = require('../models/estadoUsuarioModel');
 
 const getUsuarios = async (req, resp = response) => {

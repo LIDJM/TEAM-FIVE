@@ -2,6 +2,7 @@ import React from 'react';
 
 const RegistroProductos = () => {
 	return (
+		<div className = 'page_content'>
 		<div className='formulario'>
 			<form action='' class='form-registro'>
 				<form action='' class=''>
@@ -95,6 +96,7 @@ const RegistroProductos = () => {
 					<button class='btn btn-primary'>Registrar</button>
 				</form>
 			</form>
+		</div>
 		</div>
 	);
 };

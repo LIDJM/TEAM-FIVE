@@ -27,6 +27,11 @@ const ContentRouter = () => {
 					path='/registroProductos'
 					component={RegistroProductos}
 				/>
+				<Route
+					path='/registroVentas'
+					exact
+					component={registroVentas}
+				/>
 				<Redirect to='/' />
 			</Switch>
 		</>

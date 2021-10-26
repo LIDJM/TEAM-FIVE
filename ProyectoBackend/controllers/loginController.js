@@ -49,7 +49,9 @@ const googleLogin = async (req, resp = response) => {
 				name: newUser.name,
 			});
 		}
-	} catch (error) {}
+	} catch (error) {
+		console.log(error);
+	}
 
 	resp.json({
 		ok: true,

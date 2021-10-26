@@ -1,5 +1,3 @@
-import React from 'react';
-
 const DatosCabeceraUsuarios = [
 	{
 		nombre: 'Cedula',
@@ -17,7 +15,7 @@ const DatosCabeceraUsuarios = [
 		nombre: 'Estado',
 	},
 	{
-		nombre: '',
+		nombre: 'Acciones',
 	},
 ];
 

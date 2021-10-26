@@ -9,7 +9,7 @@ import '../../index.css';
 
 export const Login = () => {
 	const auth = useAuth();
-
+	//no Borrar
 	const responseGoogle = async (respuesta) => {
 		//console.log(respuesta);
 		try {

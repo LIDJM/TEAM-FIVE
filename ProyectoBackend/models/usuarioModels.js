@@ -7,7 +7,7 @@ const UsuarioSchema = Schema({
 	},
 	cedula: {
 		type: String,
-		unique: true,
+		sparse: true,
 	},
 	nombre: {
 		type: String,

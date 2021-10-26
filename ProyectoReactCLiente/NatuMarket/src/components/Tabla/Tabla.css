@@ -68,11 +68,11 @@ table.table td a.view {
 }
 table.table td a.edit {
 	color: #ffc107;
-	margin: 2px;
+	margin: 10px;
 }
 table.table td a.delete {
 	color: #e34724;
-	margin: 2px;
+	margin: 10px;
 }
 table.table td i {
 	font-size: 19px;

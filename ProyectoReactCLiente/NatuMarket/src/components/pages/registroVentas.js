@@ -1,6 +1,6 @@
 import React from 'react';
 
-const registroVentas = () => {
+const RegistroVentas = () => {
     return (
         <div className = 'page_content'>
             <div className='formulario'>
@@ -72,4 +72,4 @@ const registroVentas = () => {
     );
 };
 
-export default registroVentas;
+export default RegistroVentas;

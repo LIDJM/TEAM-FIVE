@@ -4,21 +4,21 @@ import {
 	Switch,
 	Route,
 } from 'react-router-dom';
-import Login from '../components/pages/Login';
+import {Login} from '../components/pages/Login';
 import ContentRouter from './ContentRouter';
-// import PrivateRoute from './PrivateRoute';
-// import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 import './App.css';
 
 function AppRouter() {
 	return (
 		<Router>
-			<>
+			<div>
 				<Switch>
-					<Route exact path='/login' component={Login} />
-					<Route path='/' component={ContentRouter} />
+					<PublicRoute exact path='/login' component={Login} />
+					<PrivateRoute path='/' component={ContentRouter} />
 				</Switch>
-			</>
+			</div>
 		</Router>
 	);
 }

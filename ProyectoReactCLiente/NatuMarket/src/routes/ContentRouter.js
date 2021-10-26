@@ -9,15 +9,16 @@ import RegistroUsuarios from '../components/pages/RegistroUsuarios';
 import RegistroProductos from '../components/pages/RegistroProductos';
 import RegistroVentas from '../components/pages/RegistroVentas';
 
+
 const ContentRouter = () => {
 	return (
 		<>
 			<SideBar />
 			<Switch>
-				<Route path='/' exact component={Home} />
-				<Route path='/productos' exact component={Productos} />
-				<Route path='/Usuarios' exact component={Usuarios} />
-				<Route path='/ventas' exact component={Ventas} />
+				<Route exact path='/' component={Home} />
+				<Route exact path='/productos' component={Productos} />
+				<Route exact path='/Usuarios' component={Usuarios} />
+				<Route exact path='/ventas' component={Ventas} />
 				<Route
 					exact
 					path='/registroUsuarios'

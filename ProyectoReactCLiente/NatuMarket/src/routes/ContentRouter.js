@@ -8,29 +8,30 @@ import Ventas from '../components/pages/Ventas';
 import registroUsuarios from '../components/pages/registroUsuarios';
 import registroProductos from '../components/pages/registroProductos';
 import registroVentas from '../components/pages/registroVentas';
+import FiltrarVentasCcNit from '../components/pages/FiltrarVentasCcNit';
 
 const ContentRouter = () => {
 	return (
 		<>
 			<SideBar />
 			<Switch>
-				<Route path='/' exact component={home} />
-				<Route path='/productos' exact component={Productos} />
-				<Route path='/Usuarios' exact component={Usuarios} />
-				<Route path='/ventas' exact component={Ventas} />
+				<Route exact path='/' component={home} />
+				<Route exact path='/productos' component={Productos} />
+				<Route exact path='/Usuarios' component={Usuarios} />
+				<Route exact path='/ventas' component={Ventas} />
+				<Route exact path= '/ventas/filtrar/nit_cc_cliente/:cliente_id' component = {FiltrarVentasCcNit } />
+
+				filtrar/nit_cc_cliente/:cliente_id
 				<Route
-					path='/registroUsuarios'
-					exact
+					exact path ='/registroUsuarios'
 					component={registroUsuarios}
 				/>
 				<Route
-					path='/registroProductos'
-					exact
+					exact path='/registroProductos'
 					component={registroProductos}
 				/>
 				<Route
-					path='/registroVentas'
-					exact
+					exact path='/registroVentas'
 					component={registroVentas}
 				/>
 				<Redirect to='/' />

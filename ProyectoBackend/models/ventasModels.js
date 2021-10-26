@@ -37,8 +37,11 @@ const VentaSchema = Schema({
     estado: {
         type: String,
         default: "Realizada",
-        values: ['Realizada', 'No Realizada', 'En Trámite' ],
-        require: true
+        enum: {
+            values: ['Realizada', 'No Realizada', 'En Trámite' ],
+            message: '{VALUE} is not supported'
+        },
+        required: true
     }
 },
 {

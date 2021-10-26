@@ -8,8 +8,11 @@ const {getVentas,
     eliminarVenta, 
     getVentasByProducto,
     getVentasByCliente,
+    getVentasByIDCliente,
+    getVentasByNombreCliente,
     getVentasByVendedor,
-    getVentasByID } = require('../controllers/ventasController');
+    getVentasByID
+    } = require('../controllers/ventasController');
 
 router.get('/listar', getVentas);
 
@@ -19,12 +22,16 @@ router.put('/actualizar/:id', actualizarVenta);
 
 router.delete('/eliminar/:id', eliminarVenta);
 
-router.get('/filtroVentaProducto/:producto_id', getVentasByProducto);
+router.get('/filtrar/id_producto/:producto_id', getVentasByProducto);
 
-router.get('/filtroVentaCliente/:cliente_id', getVentasByCliente);
+router.get('/filtrar/id_cliente/:cliente_id', getVentasByCliente);
 
-router.get('/filtroVentaVendedor/:vendedor_id', getVentasByVendedor);
+router.get('/filtrar/nit_cc_cliente/:cliente_id', getVentasByIDCliente);
 
-router.get('/filtroVentaId/:id', getVentasByID);
+router.get('/filtrar/nombre_cliente/:cliente_nombre', getVentasByNombreCliente);
+
+router.get('/filtrar/vendedor/:vendedor_id', getVentasByVendedor);
+
+router.get('/filtrar/id_venta/:id', getVentasByID);
 
 module.exports = router;

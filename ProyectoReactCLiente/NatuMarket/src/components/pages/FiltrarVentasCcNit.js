@@ -1,16 +1,20 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-//import {useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraVentas from '../Datos/DatosCabeceraVentas';
 import axios from 'axios';
 
-const Ventas = () => {
+const FiltrarVentasCcNit = () => {
 	const [ventas, setVentas] = useState([]);
-
+	const {cliente_id} = useParams();
+    
+	console.log('cliente_id de params: ')
+	console.log(cliente_id)
+	
 	useEffect(async () => {
 		let response = await axios.get(
-			'http://localhost:4001/api/ventas/listar'
+			'http://localhost:4001/api/ventas/filtrar/nit_cc_cliente/:cliente_id'
 		);
 		console.log(response.data);
 		setVentas(response.data);
@@ -60,35 +64,6 @@ const Ventas = () => {
 	return (
 		<>
 			<div className='page_content'>
-				<table id='agregarBuscar'>
-					<div class='row'>
-						<tr>
-							<th>
-								<div class='col-sm-7'>
-									<a href='/registroVentas' class='btn btn-primary'>
-										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar nueva Venta</span>
-									</a>
-								</div>
-							</th>
-							<th>
-								<div class='input-group'>
-									<div class='form-outline'>
-										<input
-											type='search'
-											id='form1'
-											class='form-control'
-											placeholder='Buscar por Documento Cliente'
-										/>
-									</div>
-									<button type='button' class='btn btn-primary'>
-										<i class='fa fa-search'></i>
-									</button>
-								</div>
-							</th>
-						</tr>
-					</div>
-				</table>
 				<Tabla
 					Datos={
 						<table class='table table-striped table-hover'>
@@ -143,4 +118,4 @@ const Ventas = () => {
 	);
 };
 
-export default Ventas;
+export default FiltrarVentasCcNit;

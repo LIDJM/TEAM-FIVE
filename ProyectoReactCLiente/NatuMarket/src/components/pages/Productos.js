@@ -3,7 +3,7 @@ import Tabla from '../Tabla/tabla';
 import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
 import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
 
-const productos = () => {
+const Productos = () => {
 	const setEstado = (estado) => {
 		if (estado === 'Disponible') {
 			return (

@@ -46,14 +46,6 @@ const Usuarios = () => {
 					<div class='row'>
 						<tr>
 							<th>
-								<div class='col-sm-7'>
-									<a href='/registroUsuarios' class='btn btn-primary'>
-										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar nuevo Usuario</span>
-									</a>
-								</div>
-							</th>
-							<th>
 								<div class='input-group'>
 									<div class='form-outline'>
 										<input

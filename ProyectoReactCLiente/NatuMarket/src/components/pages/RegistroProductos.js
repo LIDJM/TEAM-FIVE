@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import ModalRegPro from './ModalRegPro';
 
 
 const RegistroProductos = () => {
+
+	const [openModal, setOpenModal] = useState(false);
+
 	const {
 		register,
 		handleSubmit,
@@ -154,7 +158,14 @@ const RegistroProductos = () => {
 							</div>
 						</div>
 					</div>
-					<input type='submit' className='btn btn-primary' />
+					<input 
+					type='submit' 
+					className='btn btn-primary' 
+					onClick={() => {
+						setOpenModal(true)
+					}}
+					/>
+					{openModal && <ModalRegPro closeModal ={setOpenModal}/>}
 					{/* <button class='btn btn-primary'>Registrar</button> */}
 				</form>
 			</div>

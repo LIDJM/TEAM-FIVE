@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Usuarios = () => {
 	const [usuarios, setUsuarios] = useState([]);
@@ -46,14 +47,6 @@ const Usuarios = () => {
 					<div class='row'>
 						<tr>
 							<th>
-								<div class='col-sm-7'>
-									<a href='/registroUsuarios' class='btn btn-primary'>
-										<i class='material-icons'>&#xE147;</i>
-										<span>Ingresar nuevo Usuario</span>
-									</a>
-								</div>
-							</th>
-							<th>
 								<div class='input-group'>
 									<div class='form-outline'>
 										<input
@@ -91,13 +84,18 @@ const Usuarios = () => {
 											<td>{usuario.rol}</td>
 											{setEstado(usuario.estado.nombre)}
 											<td>
-												<a
-													href='/CambiosUsuarios'
+												<Link
+													to={{
+														pathname: '/CambiosUsuarios',
+														state: {
+															data: usuario,
+														},
+													}}
 													className='edit'
 													title='Edit'
 													data-toggle='tooltip'>
 													<i className='material-icons'>&#xE254;</i>
-												</a>
+												</Link>
 												<a
 													href='#'
 													className='delete'

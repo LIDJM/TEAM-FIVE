@@ -100,14 +100,10 @@ const deleteUsuario = async (req, resp = response) => {
 };
 
 const setUsuario = async (req, resp = response) => {
-	const {cedula} = req.body;
-	const usuario = await Usuario.findOne({cedula}).populate('rol');
+	const id = req.params.id;
+	const usuario = await Usuario.findById({id}).populate('estado');
 
-	resp.json({
-		estatus: true,
-		msg: 'usuario',
-		usuario,
-	});
+	resp.json(usuario);
 };
 module.exports = {
 	getUsuarios,

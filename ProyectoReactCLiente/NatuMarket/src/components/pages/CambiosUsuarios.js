@@ -1,8 +1,23 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
+import {useLocation} from 'react-router-dom';
 
 const CambiosUsuarios = () => {
+	const location = useLocation();
+	const {data} = location.state;
+	console.log(data._id);
+
+	const setEstado = (estado) => {
+		if (estado === 'autorizado') {
+			return '6170e5b58bf6eda3e5ac6bc9';
+		} else if (estado === 'pendiente') {
+			return '6170e65fdb034b5294554d01';
+		} else {
+			return '6170e673db034b5294554d04';
+		}
+	};
+
 	const {
 		register,
 		handleSubmit,
@@ -11,28 +26,17 @@ const CambiosUsuarios = () => {
 	} = useForm();
 	const onSubmit = async (datos) => {
 		console.log(datos);
-		const setEstado = (estado) => {
-			if (estado === 'autorizado') {
-				return '6170e5b58bf6eda3e5ac6bc9';
-			} else if (estado === 'pendiente') {
-				return '6170e65fdb034b5294554d01';
-			} else {
-				return '6170e673db034b5294554d04';
-			}
-		};
-
-		const respuesta = await axios.post(
-			'http://localhost:4001/api/usuarios/New',
+		const respuesta = await axios.put(
+			`http://localhost:4001/api/usuarios/Upgrade/${data._id}`,
 			{
 				password: datos.password,
-				cedula: datos.cedula,
 				nombre: datos.nombre,
 				email: datos.email,
+				cedula: datos.cedula,
 				rol: datos.rol,
 				estado: setEstado(datos.estado),
 			}
 		);
-
 		console.log(respuesta);
 	};
 	console.log(errors);
@@ -46,14 +50,14 @@ const CambiosUsuarios = () => {
 							<div className='col-md-6'>
 								<input
 									type='text'
-									placeholder='Cedula'
+									defaultValue={data.cedula}
 									{...register('cedula', {})}
 								/>
 							</div>
 							<div className='col-md-6'>
 								<input
 									type='text'
-									placeholder='Nombre'
+									defaultValue={data.nombre}
 									{...register('nombre', {})}
 								/>
 							</div>
@@ -64,7 +68,7 @@ const CambiosUsuarios = () => {
 							<div className='col-md-12'>
 								<input
 									type='text'
-									placeholder='Password'
+									defaultValue={data.password}
 									{...register('password', {})}
 								/>
 							</div>
@@ -75,7 +79,7 @@ const CambiosUsuarios = () => {
 							<div className='col-md-12'>
 								<input
 									type='email'
-									placeholder='Email'
+									defaultValue={data.email}
 									{...register('email', {})}
 								/>
 							</div>
@@ -84,13 +88,18 @@ const CambiosUsuarios = () => {
 					<div className='form-group'>
 						<div className='row'>
 							<div className='col-md-6'>
-								<select {...register('rol', {})}>
+								<select
+									defaultValue={data.rol}
+									{...register('rol', {})}>
 									<option value='administrador'>Administrador</option>
-									<option value='vendedor'> Vendedor</option>
+									<option value='vendedor'>Vendedor</option>
+									<option value='no asignado'>No asignado</option>
 								</select>
 							</div>
 							<div className='col-md-6'>
-								<select {...register('estado', {})}>
+								<select
+									defaultValue={data.estado.nombre}
+									{...register('estado', {})}>
 									<option value='autorizado'>Autorizado</option>
 									<option value='pendiente'>Pendiente</option>
 									<option value='no autorizado'>No autorizado</option>

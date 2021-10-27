@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraProductos from '../Datos/DatosCabeceraProductos';
-import DatosCuerpoProductos from '../Datos/DatosCuerpoProductos';
 import axios from 'axios';
 
-const Productos = () => {
-	const [productos, setProductos] = useState([]);
 
+const Productos = () => {
+
+	const [data, setData] = useState([]);
+	
+
+	const peticionGet = async () => {
+		await axios.get('http://localhost:4001/api/productos/listar')
+			.then(response => {
+				console.log(response.data)
+				setData(response.data);
+			})
+	}
+
+	
 	useEffect(async () => {
-		let response = await axios.get(
-			'http://localhost:4001/api/productos/listar'
-		);
-		console.log(response.data);
-		setProductos(response.data);
+		await peticionGet();
+
 	}, []);
 
+	
 	const setEstado = (estado) => {
 		if (estado === 'Disponible') {
 			return (
@@ -78,9 +87,9 @@ const Productos = () => {
 								</tr>
 							</thead>
 							<tbody>
-								{productos.map((producto) => {
+								{data.map((producto) => {
 									return (
-										<tr>
+										<tr >
 											<td>{producto.categoria.nombre}</td>
 											<td>{producto.codigo}</td>
 											<td>{producto.descripcion}</td>
@@ -91,13 +100,6 @@ const Productos = () => {
 											<td>{producto.unidad.nombre}</td>
 											{setEstado(producto.estado)}
 											<td>
-												<a
-													href='#'
-													class='view'
-													title='View'
-													data-toggle='tooltip'>
-													<i class='material-icons'>&#xE417;</i>
-												</a>
 												<a
 													href='#'
 													class='edit'

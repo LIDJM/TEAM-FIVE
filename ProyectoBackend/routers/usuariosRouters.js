@@ -10,7 +10,7 @@ const {
 
 router.get('/Show', getUsuarios);
 
-router.get('/Set', setUsuario);
+router.get('/Set/:id', setUsuario);
 
 router.post('/New', newUsuario);
 

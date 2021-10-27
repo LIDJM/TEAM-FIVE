@@ -27,7 +27,7 @@ const DatosCabeceraProductos = [
 		nombre: 'Estado',
 	},
 	{
-		nombre: '',
+		nombre: 'Acciones',
 	},
 ];
 

@@ -2,7 +2,8 @@ import React from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 
-const CambiosUsuarios = () => {
+const CambiosUsuarios = ({id}) => {
+	console.log(id);
 	const {
 		register,
 		handleSubmit,
@@ -11,29 +12,6 @@ const CambiosUsuarios = () => {
 	} = useForm();
 	const onSubmit = async (datos) => {
 		console.log(datos);
-		const setEstado = (estado) => {
-			if (estado === 'autorizado') {
-				return '6170e5b58bf6eda3e5ac6bc9';
-			} else if (estado === 'pendiente') {
-				return '6170e65fdb034b5294554d01';
-			} else {
-				return '6170e673db034b5294554d04';
-			}
-		};
-
-		const respuesta = await axios.post(
-			'http://localhost:4001/api/usuarios/New',
-			{
-				password: datos.password,
-				cedula: datos.cedula,
-				nombre: datos.nombre,
-				email: datos.email,
-				rol: datos.rol,
-				estado: setEstado(datos.estado),
-			}
-		);
-
-		console.log(respuesta);
 	};
 	console.log(errors);
 

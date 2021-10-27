@@ -84,6 +84,7 @@ const Usuarios = () => {
 											{setEstado(usuario.estado.nombre)}
 											<td>
 												<a
+													id={usuario.id}
 													href='/CambiosUsuarios'
 													className='edit'
 													title='Edit'

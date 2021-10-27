@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Tabla from '../Tabla/tabla';
 import DatosCabeceraUsuarios from '../Datos/DatosCabeceraUsuarios';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Usuarios = () => {
 	const [usuarios, setUsuarios] = useState([]);
@@ -83,14 +84,18 @@ const Usuarios = () => {
 											<td>{usuario.rol}</td>
 											{setEstado(usuario.estado.nombre)}
 											<td>
-												<a
-													id={usuario.id}
-													href='/CambiosUsuarios'
+												<Link
+													to={{
+														pathname: '/CambiosUsuarios',
+														state: {
+															data: usuario,
+														},
+													}}
 													className='edit'
 													title='Edit'
 													data-toggle='tooltip'>
 													<i className='material-icons'>&#xE254;</i>
-												</a>
+												</Link>
 												<a
 													href='#'
 													className='delete'

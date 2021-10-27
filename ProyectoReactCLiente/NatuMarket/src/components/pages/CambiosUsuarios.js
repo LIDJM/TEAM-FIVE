@@ -2,11 +2,12 @@ import React from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 import {useLocation} from 'react-router-dom';
+import notie from 'notie';
+import 'notie/dist/notie.css';
 
 const CambiosUsuarios = () => {
 	const location = useLocation();
 	const {data} = location.state;
-	console.log(data._id);
 
 	const setEstado = (estado) => {
 		if (estado === 'autorizado') {
@@ -37,7 +38,13 @@ const CambiosUsuarios = () => {
 				estado: setEstado(datos.estado),
 			}
 		);
-		console.log(respuesta);
+		if (respuesta.status === 201) {
+			notie.alert({
+				text: respuesta.data.msg,
+				type: 'success',
+				time: 10,
+			});
+		}
 	};
 	console.log(errors);
 
